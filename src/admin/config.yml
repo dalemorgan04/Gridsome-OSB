@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: dalemorgan04/Gridsome-OSB-2
+  repo: dalemorgan04/Gridsome-OSB
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
