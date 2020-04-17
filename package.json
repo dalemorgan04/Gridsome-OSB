@@ -1,5 +1,5 @@
 {
-  "name": "Gridsome-OSB-2",
+  "name": "Gridsome-OSB",
   "private": true,
   "scripts": {
     "build": "gridsome build",
@@ -9,8 +9,16 @@
   "dependencies": {
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.5.0",
+    "bootstrap": "^4.4.1",
+    "bootstrap-vue": "^2.11.0",
     "gridsome": "^0.7.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
-    "netlify-cms": "^2.10.44"
+    "netlify-cms": "^2.10.44",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
+    "vue-svg-loader": "^0.16.0"
   }
 }

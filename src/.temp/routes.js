@@ -1,5 +1,9 @@
 export default [
   {
+    path: "/project/",
+    component: () => import(/* webpackChunkName: "page--src-pages-project-vue" */ "D:\\Repos\\Personal\\Gridsome-OSB\\src\\pages\\project.vue")
+  },
+  {
     path: "/about/",
     component: () => import(/* webpackChunkName: "page--src-pages-about-vue" */ "D:\\Repos\\Personal\\Gridsome-OSB\\src\\pages\\About.vue")
   },
@@ -11,7 +15,7 @@ export default [
   {
     name: "home",
     path: "/",
-    component: () => import(/* webpackChunkName: "page--src-pages-index-vue" */ "D:\\Repos\\Personal\\Gridsome-OSB\\src\\pages\\Index.vue")
+    component: () => import(/* webpackChunkName: "page--src-pages-index-vue" */ "D:\\Repos\\Personal\\Gridsome-OSB\\src\\pages\\index.vue")
   },
   {
     name: "*",

@@ -1,0 +1,60 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+
+//Screen widths
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+
+//Theme
+$primary: #ffda00;
+$secondary: #4ABDAC;
+$warning: #ffda00;
+$danger: #E4572E;
+$success: #17BEBB;
+$info: #3F88C5;
+$dark: #2E282A;
+$light: white;
+$font-header: 'Playfair Display', serif;
+$shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+$enable-rounded: false;
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+body{
+    background-color: white;
+    h1 {
+        font-family: $font-header;
+    }
+}
+
+//Floating accent
+.accent {
+    position:relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top:-10px;
+        left: 0;
+        width: 80px;
+        height: 5px;
+        background: $primary;
+    }
+}
+@media (min-width: $tablet) {
+    .accent {
+        position:relative;
+    
+        &:before {
+            content: "";
+            position: absolute;
+            top:-10px;
+            left: 0;
+            width: 100px;
+            height: 10px;
+            background: $primary;
+        }
+    }   
+}
