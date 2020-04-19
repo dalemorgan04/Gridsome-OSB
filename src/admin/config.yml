@@ -11,30 +11,19 @@ collections:
     description: "Includes settings for project pages and project preview cards"
     folder: "content/projects"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
-      - name: "settings"
-        label: "Page Settings"
-        widget: "object"
-        fields:
-          - label: "Maximum No of Images"
-            name: "maxImageCount"
-            widget: "number"
-            valueType: "int"
-            default: 1
-            min: 1
+      - {label: "Project Name", name: "title", widget: "string"}
       - name: "card"
         label: "Preview Card"
         widget: "object"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
           - {label: "Description", name: "description", widget: "string"}
           - {label: "Image", name: image, widget: image}
       - name: "projectPage"
         label: "Project Page"
         widget: "object"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
           - {label: "Description", name: "description", widget: "string"}
           - label: "Images"
             name: "imageList"
@@ -46,9 +35,9 @@ collections:
     description: "Testimonials shown on the Home Page"
     folder: "content/testimonials"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
-      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Customer Name", name: "title", widget: "string"}
       - {label: "Testimonial Text", name: "body", widget: "string"}
       - {label: "Customer Image", name: "image", widget: "image"}
   - label: "Pages"
@@ -57,7 +46,7 @@ collections:
     files:
       - label: "Home Page"
         name: "home"
-        file: "site/content/home.yml"
+        file: "content/pages/home.yml"
         fields:
           - {label: "Introduction", name: "intro", widget: "string"}
           - label: "HeroImages"
@@ -68,7 +57,7 @@ collections:
           - {label: "Opening Text", name: "summary", widget: "string"}
       - label: "About Page"
         name: "about"
-        file: "site/content/about.yml"
+        file: "content/pages/about.yml"
         fields:
           - {label: "Content", name: "body", widget: "markdown"}
   - label: "Settings"
@@ -77,6 +66,6 @@ collections:
     files:
       - label: "Site Settings"
         name: "siteSettings"
-        file: "site/content/siteSettings.yml"
+        file: "content/settings/siteSettings.yml"
         fields:
           - {label: "Site Name", name: "siteName" , widget: "string" }
