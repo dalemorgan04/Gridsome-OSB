@@ -6,13 +6,77 @@ media_folder: "static/uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "posts"
-    label: "Posts"
-    folder: "posts"
+  - name: "projects"
+    label: "Projects"
+    description: "Includes settings for project pages and project preview cards"
+    folder: "content/projects"
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Excerpt", name: "excerpt", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "date"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - name: "settings"
+        label: "Page Settings"
+        widget: "object"
+        fields:
+          - label: "Maximum No of Images"
+            name: "maxImageCount"
+            widget: "number"
+            valueType: "int"
+            default: 1
+            min: 1
+      - name: "card"
+        label: "Preview Card"
+        widget: "object"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "string"}
+          - {label: "Image", name: image, widget: image}
+      - name: "projectPage"
+        label: "Project Page"
+        widget: "object"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "string"}
+          - label: "Images"
+            name: "imageList"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+  - name: "testimonials"
+    label: "Testimonials"
+    description: "Testimonials shown on the Home Page"
+    folder: "content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Testimonial Text", name: "body", widget: "string"}
+      - {label: "Customer Image", name: "image", widget: "image"}
+  - label: "Pages"
+    name: "pages"
+    description: "Content and settings for individual pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "site/content/home.yml"
+        fields:
+          - {label: "Introduction", name: "intro", widget: "string"}
+          - label: "HeroImages"
+            name: "heroImages"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+          - {label: "Opening Text", name: "summary", widget: "string"}
+      - label: "About Page"
+        name: "about"
+        file: "site/content/about.yml"
+        fields:
+          - {label: "Content", name: "body", widget: "markdown"}
+  - label: "Settings"
+    name: "settings"
+    description: "General site information and settings"
+    files:
+      - label: "Site Settings"
+        name: "siteSettings"
+        file: "site/content/siteSettings.yml"
+        fields:
+          - {label: "Site Name", name: "siteName" , widget: "string" }

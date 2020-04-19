@@ -1,7 +1,7 @@
 <template>
   <nav>
     <ul class="d-flex flex-row justify-content-center align-items-center">
-      <li class="selected"><nuxt-link to="/">Home</nuxt-link></li>
+      <li class="selected"><g-link to="/">Home</g-link></li>
       <li><g-link to="/project">Projects</g-link></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>

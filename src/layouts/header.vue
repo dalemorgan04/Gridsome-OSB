@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import AppNav from './nav.vue'
+import AppNav from './Nav.vue'
 import LogoSvg from '../assets/logo.svg'
 export default {
   components: {

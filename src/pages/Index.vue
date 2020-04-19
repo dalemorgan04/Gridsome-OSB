@@ -59,8 +59,8 @@
 </template>
 
 <script>
-import Projects from '../components/projects.vue'
-import Testimonials from '../components/testimonials.vue'
+import Projects from '../components/Projects.vue'
+import Testimonials from '../components/Testimonials.vue'
 
 export default {
   components: {
