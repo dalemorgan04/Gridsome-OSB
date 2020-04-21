@@ -16,31 +16,40 @@ module.exports = {
       ]
     }
   },
-  plugins: [
-    {
-      use: '@gridsome/source-filesystem',
-      options: {
-        path: 'posts/**/*.md',
-        typeName: 'Post',
-        remark: {
-          plugins: [
-            // ...local plugins
-          ]
-        }
-      }
-    },
-    {
-      use: `gridsome-plugin-netlify-cms`,
-      options: {
-        publicPath: `/admin`
-      }
-    }
-  ],
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()
     svgRule
       .use('vue-svg-loader')
       .loader('vue-svg-loader')
-  }
+  },
+  plugins: [
+    {
+      use: `gridsome-plugin-netlify-cms`,
+      options: {
+        publicPath: `/admin`
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'content/projects/*.md',
+        typeName: 'Projects',
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'content/testimonials/*.md',
+        typeName: 'Testimonials',
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'content/pages/home.yml',
+        typeName: 'HomeContent',
+      }
+    }
+  ]
 }

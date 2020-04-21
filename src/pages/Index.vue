@@ -3,7 +3,8 @@
     <div>
       <section class="jumbotron-container">
         <div class="container-image">
-          <img src="/static/uploads/lounge.jpg" />
+
+          <!-- <g-img src="/static/uploads/lounge.jpg" /> -->
         </div>
         <div class="container-text">
           <div class="inner-container-text">
@@ -11,9 +12,7 @@
               Inspiring Architectural Design Solutions for your home
             </h1>
             <p>
-              OSB-Architects work to create inspiring spaces through functional
-              and uplifting design with the overall aim of making that perfect
-              "happy home" for you to enjoy
+              {{intro}}
             </p>
           </div>
         </div>
@@ -21,15 +20,6 @@
 
       <section class="summary-container">
         <div class="summary-content">
-          OSB-Architects offer residential design services throughout the East
-          Midlands region, including minor property alterations, residential
-          remodelling projects, house extensions, loft and garage conversions, and
-          new build homes. We specialise in thoughtful architectural design
-          projects personalised to your requirements and focussed on improving
-          your wellbeing. OSB-Architects can guide and advice you through any
-          property design alteration work, including feasibility ideas, planning
-          applications and building regulations applications. Please browse our
-          website for further information or get in touch via our contact page.
         </div>
       </section>
 
@@ -38,9 +28,9 @@
       </div>
       <section class="projects-container">
         <projects
-          v-for="project in projects"
-          v-bind:key="project.id"
-          v-bind:project="project"
+          v-for="edge in $page.projectCards.edges"
+          :key="edge.node.id"
+          :project="edge.node"
         ></projects>
       </section>
 
@@ -57,6 +47,38 @@
     </div>
   </Layout>
 </template>
+
+<page-query>
+query {
+  projectCards: allProjects {
+    edges {
+      node {
+        id
+        card {
+          image
+          description          
+        }
+      }
+    }
+  }
+}
+</page-query>
+
+<static-query>
+query {
+  homeContent: allHomeContent {
+    edges {
+      node {
+        intro
+        summary        
+        heroImages {
+          image
+        }
+      }
+    }
+  }
+}
+</static-query>
 
 <script>
 import Projects from '../components/Projects.vue'
@@ -87,6 +109,10 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    intro: function() { return this.$static.homeContent.edges[0].node.intro},
+    intro: function() { return this.$static.homeContent.edges[0].node.intro}
   },
   methods: {}
 }

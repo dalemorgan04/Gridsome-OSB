@@ -1,9 +1,10 @@
 <template>
   <div class="card-project">
-    <img :src="projectImage" :alt="project.imageAlt" class="card-img-top" />
+    <!-- <g-img :src="image" :alt="imageAlt" class="card-img-top" /> -->
+    <g-image src="/static/uploads/house/jpg" />
     <div class="card-body">
       <h5 class="card-title">{{ project.title }}</h5>
-      <p class="card-text">{{ project.text }}</p>
+      <p class="card-text">{{ project.card.description }}</p>
       <a href="#" class="btn btn-primary">View</a>
     </div>
   </div>
@@ -18,8 +19,11 @@ export default {
     }
   },
   computed: {
-    projectImage() {
-      return;
+    image() {
+      return '/static' + this.project.card.image;
+    },
+    imageAlt() {
+      return this.project.title;
     }
   }
 }

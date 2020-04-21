@@ -9,7 +9,7 @@
 
 <script>
 import AppNav from './Nav.vue'
-import LogoSvg from '../assets/logo.svg'
+import LogoSvg from '../assets/images/logo.svg'
 export default {
   components: {
     'app-nav': AppNav,LogoSvg

@@ -2,8 +2,8 @@ backend:
   name: github
   repo: dalemorgan04/Gridsome-OSB
 
-media_folder: "static/uploads"
-public_folder: "/uploads"
+media_folder: "src/assets/uploads"
+public_folder: "~/assets/uploads"
 
 collections:
   - name: "projects"
@@ -66,6 +66,6 @@ collections:
     files:
       - label: "Site Settings"
         name: "siteSettings"
-        file: "content/settings/siteSettings.yml"
+        file: "content/settings/site-settings.yml"
         fields:
           - {label: "Site Name", name: "siteName" , widget: "string" }
