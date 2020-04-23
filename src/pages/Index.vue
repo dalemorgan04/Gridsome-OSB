@@ -3,7 +3,7 @@
     <div>
       <section class="jumbotron-container">
         <div class="container-image">
-
+          <g-image src="@/assets/uploads/20190902_184211.jpg" />
           <!-- <g-img src="/static/uploads/lounge.jpg" /> -->
         </div>
         <div class="container-text">

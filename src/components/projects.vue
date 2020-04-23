@@ -1,7 +1,6 @@
 <template>
   <div class="card-project">
-    <!-- <g-img :src="image" :alt="imageAlt" class="card-img-top" /> -->
-    <g-image src="/static/uploads/house/jpg" />
+    <g-image :src="image" class="card-img-top" />
     <div class="card-body">
       <h5 class="card-title">{{ project.title }}</h5>
       <p class="card-text">{{ project.card.description }}</p>
@@ -11,7 +10,7 @@
 </template>
 <script>
 export default {
-  name: 'Project',
+  name: 'Projects',
   props: {
     project: {
       type: Object,
@@ -19,8 +18,9 @@ export default {
     }
   },
   computed: {
+    imageUrl() { return "@/assets/uploads/" + this.project.card.image },
     image() {
-      return '/static' + this.project.card.image;
+      return require(`!!assets-loader!@uploads/${this.project.card.image}`);
     },
     imageAlt() {
       return this.project.title;
@@ -31,9 +31,12 @@ export default {
 <style lang="scss" scoped>
 @import '../layouts/theme.scss';
 .card-project {
+  width: 100%;
+
   img {
     box-shadow: $shadow;
   }
+
   .card-body {
     position: relative;
 

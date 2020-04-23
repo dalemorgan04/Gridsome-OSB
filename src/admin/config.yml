@@ -3,7 +3,7 @@ backend:
   repo: dalemorgan04/Gridsome-OSB
 
 media_folder: "src/assets/uploads"
-public_folder: "~/assets/uploads"
+public_folder: ""
 
 collections:
   - name: "projects"
