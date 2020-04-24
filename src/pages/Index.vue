@@ -3,8 +3,18 @@
     <div>
       <section class="jumbotron-container">
         <div class="container-image">
-          <g-image src="@/assets/uploads/20190902_184211.jpg" />
-          <!-- <g-img src="/static/uploads/lounge.jpg" /> -->
+          <b-carousel 
+              style="text-shadow: 0px 0px 2px #000"
+              fade
+              img-width="1024"
+              img-height="480"
+          >
+            <b-carousel-slide
+              v-for="image in heroImages" 
+              :key="image"
+              :img-src="image.src"
+            ></b-carousel-slide>
+          </b-carousel>
         </div>
         <div class="container-text">
           <div class="inner-container-text">
@@ -50,22 +60,6 @@
 
 <page-query>
 query {
-  projectCards: allProjects {
-    edges {
-      node {
-        id
-        card {
-          image
-          description          
-        }
-      }
-    }
-  }
-}
-</page-query>
-
-<static-query>
-query {
   homeContent: allHomeContent {
     edges {
       node {
@@ -76,43 +70,39 @@ query {
         }
       }
     }
-  }
+  },
+  projectCards: allProjects {
+    edges {
+      node {
+        id
+        card {
+          image
+          description          
+        }
+      }
+    }
+  }  
 }
-</static-query>
+</page-query>
 
 <script>
 import Projects from '../components/Projects.vue'
 import Testimonials from '../components/Testimonials.vue'
 
-export default {
+export default {  
   components: {
     projects: Projects,
     testimonials: Testimonials
   },
-  data() {
-    return {
-      projects: [
-        {
-          id: 1,
-          image: 'house',
-          imageAlt: 'house',
-          title: 'Wollaton',
-          text: 'A one floor extension that is really really good, so there'
-        }
-      ],
-      testimonials: [
-        {
-          id: 1,
-          image: 'bob',
-          name: 'Bob McBobby',
-          text: 'She was so helpful and my house looks amazeballs'
-        }
-      ]
-    }
-  },
   computed: {
-    intro: function() { return this.$static.homeContent.edges[0].node.intro},
-    intro: function() { return this.$static.homeContent.edges[0].node.intro}
+    intro() { return this.$page.homeContent.edges[0].node.intro},
+    heroImages() { 
+      var images = [];
+      this.$page.homeContent.edges[0].node.heroImages.forEach( i => {
+        images.push(require(`!!assets-loader!@uploads/${i.image}`));
+      });
+      return images;
+    }
   },
   methods: {}
 }
@@ -141,7 +131,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    img {
+    .carousel {
       height: auto;
       width: 100%;
       box-shadow: $shadow;

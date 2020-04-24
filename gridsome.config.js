@@ -23,6 +23,7 @@ module.exports = {
       .use('vue-svg-loader')
       .loader('vue-svg-loader')
     config.resolve.alias.set('@uploads', '@/assets/uploads')
+    config.mode('development')
   },
   plugins: [
     {
