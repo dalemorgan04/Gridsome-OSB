@@ -86,6 +86,7 @@ query {
    testimonials: allTestimonials {
     edges {
       node {
+        id
         title
         image        
       }
