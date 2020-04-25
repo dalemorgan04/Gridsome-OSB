@@ -7,9 +7,9 @@
     </div>
     <div class="image-container">
       <div class="image-cropper">
-        <img
-          :src="clientImage"
-          :alt="testimonial.image"
+        <g-image
+          :src="image"
+          :alt="testimonial.title"
           class="card-img-bottom"
         />
       </div>
@@ -26,8 +26,8 @@ export default {
     }
   },
   computed: {
-    clientImage() {      
-      return;
+    image() {
+      return require(`!!assets-loader!@uploads/${this.testimonial.image}`);
     }
   }
 }

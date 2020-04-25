@@ -4,10 +4,10 @@
       <section class="jumbotron-container">
         <div class="container-image">
           <b-carousel 
-              style="text-shadow: 0px 0px 2px #000"
-              fade
-              img-width="1024"
-              img-height="480"
+            style="text-shadow: 0px 0px 2px #000"
+            fade
+            img-width="1024"
+            img-height="480"
           >
             <b-carousel-slide
               v-for="image in heroImages" 
@@ -30,6 +30,7 @@
 
       <section class="summary-container">
         <div class="summary-content">
+          {{summary}}
         </div>
       </section>
 
@@ -37,11 +38,11 @@
         <h1>Project Highlights</h1>
       </div>
       <section class="projects-container">
-        <projects
+        <projectcards
           v-for="edge in $page.projectCards.edges"
           :key="edge.node.id"
           :project="edge.node"
-        ></projects>
+        ></projectcards>
       </section>
 
       <div class="section-title accent">
@@ -49,9 +50,9 @@
       </div>
       <section class="testimonials-container">
         <testimonials
-          v-for="testimonial in testimonials"
-          v-bind:key="testimonial.id"
-          v-bind:testimonial="testimonial"
+         v-for="edge in $page.testimonials.edges"
+          :key="edge.node.id"
+          :testimonial="edge.node"
         ></testimonials>
       </section>
     </div>
@@ -81,21 +82,30 @@ query {
         }
       }
     }
+  },
+   testimonials: allTestimonials {
+    edges {
+      node {
+        title
+        image        
+      }
+    }
   }  
 }
 </page-query>
 
 <script>
-import Projects from '../components/Projects.vue'
-import Testimonials from '../components/Testimonials.vue'
+import ProjectCard from '../components/ProjectCard.vue'
+import Testimonial from '../components/Testimonial.vue'
 
 export default {  
   components: {
-    projects: Projects,
-    testimonials: Testimonials
+    projectcards: ProjectCard,
+    testimonials: Testimonial
   },
   computed: {
     intro() { return this.$page.homeContent.edges[0].node.intro},
+    summary() { return this.$page.homeContent.edges[0].node.summary},
     heroImages() { 
       var images = [];
       this.$page.homeContent.edges[0].node.heroImages.forEach( i => {

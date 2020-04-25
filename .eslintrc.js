@@ -4,9 +4,7 @@ module.exports = {
     browser: true,
     node: true
   },
-  parserOptions: {
-    parser: 'babel-eslint'
-  },
+  parser: "vue-eslint-parser",
   extends: [
     'prettier',
     'prettier/vue'

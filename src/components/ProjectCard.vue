@@ -10,7 +10,7 @@
 </template>
 <script>
 export default {
-  name: 'Projects',
+  name: 'ProjectCard',
   props: {
     project: {
       type: Object,
@@ -18,7 +18,6 @@ export default {
     }
   },
   computed: {
-    imageUrl() { return "@/assets/uploads/" + this.project.card.image },
     image() {
       return require(`!!assets-loader!@uploads/${this.project.card.image}`);
     },
