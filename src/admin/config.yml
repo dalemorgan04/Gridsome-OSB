@@ -38,7 +38,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
       - {label: "Customer Name", name: "title", widget: "string"}
-      - {label: "Testimonial Text", name: "body", widget: "string"}
+      - {label: "Testimonial Text", name: "text", widget: "string"}
       - {label: "Customer Image", name: "image", widget: "image"}
   - label: "Pages"
     name: "pages"

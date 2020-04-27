@@ -24,7 +24,7 @@ $enable-rounded: false;
 
 body{
     background-color: white;
-    h1 {
+    h1, h2 {
         font-family: $font-header;
     }
 }
@@ -53,7 +53,7 @@ body{
             top:-10px;
             left: 0;
             width: 100px;
-            height: 10px;
+            height: 8px;
             background: $primary;
         }
     }   

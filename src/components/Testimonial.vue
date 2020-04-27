@@ -2,7 +2,7 @@
   <div class="card-testimonial">
     <div class="card-body">
       <p class="card-text">
-        <i>{{ testimonial.body }}</i>
+        <i>{{ testimonial.text }}</i>
       </p>
     </div>
     <div class="image-container">

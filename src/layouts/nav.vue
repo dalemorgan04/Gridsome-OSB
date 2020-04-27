@@ -37,44 +37,19 @@ nav {
   }
 }
 
-/* li hover effect */
-ul li {
-  margin: 0 10px;
+@media (min-width: $desktop) {
+  nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-  a {
-    position: relative;
-  }
-
-  a::before,
-  a::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: $secondary;
-    transform: scaleY(0);
-    transition: transform 0.5s ease;
-  }
-
-  a::before {
-    left: -10px;
-    transform-origin: center top;
-  }
-
-  a:hover::before {
-    transform-origin: center bottom;
-    transform: scaleY(1);
-  }
-
-  a::after {
-    right: -10px;
-    transform-origin: center bottom;
-  }
-
-  a:hover::after {
-    transform-origin: center top;
-    transform: scaleY(1);
+    li {
+      padding: 20px;
+      a {
+        font-size: 25px;
+      }
+    }
   }
 }
 </style>

@@ -11,7 +11,7 @@
           >
             <b-carousel-slide
               v-for="image in heroImages" 
-              :key="image"
+              :key="image.index"
               :img-src="image.src"
             ></b-carousel-slide>
           </b-carousel>
@@ -29,24 +29,26 @@
       </section>
 
       <section class="summary-container">
-        <div class="summary-content">
+        <p class="summary-content">
           {{summary}}
+        </p>
+      </section>
+
+      <div class="section-title accent">
+        <h1>Feature Projects</h1>
+      </div>
+      <section class="projects-container">
+        <div class="inner-projects-container" >
+          <projectcards
+            v-for="edge in $page.projectCards.edges"
+            :key="edge.node.id"
+            :project="edge.node"
+          ></projectcards>
         </div>
       </section>
 
       <div class="section-title accent">
-        <h1>Project Highlights</h1>
-      </div>
-      <section class="projects-container">
-        <projectcards
-          v-for="edge in $page.projectCards.edges"
-          :key="edge.node.id"
-          :project="edge.node"
-        ></projectcards>
-      </section>
-
-      <div class="section-title accent">
-        <h1>Testimonials</h1>
+        <h1>Here's what some of our Happy People had to say</h1>
       </div>
       <section class="testimonials-container">
         <testimonials
@@ -88,7 +90,8 @@ query {
       node {
         id
         title
-        image        
+        text
+        image
       }
     }
   }  
@@ -125,6 +128,10 @@ export default {
 h1 {
   color: $dark;
   font-size: 30px;
+}
+h2 {
+  color: $dark;
+  font-size: 20px;
 }
 .section-title {
   margin: 50px 20px 10px 20px;
@@ -184,11 +191,13 @@ h1 {
   }
 }
 
-.projects-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 20px;
+.projects-container{
+  .inner-projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
 }
 
 .testimonials-container {
@@ -216,5 +225,44 @@ h1 {
 }
 
 @media (min-width: $desktop) {
+
+  h1 {
+    font-size: 45px;
+  }
+  p {
+    font-size: 25px;
+  }
+
+  .jumbotron-container{
+    display: flex;
+    flex-direction: row-reverse;
+
+    .container-image{
+      flex: 0 0 60%;
+    }
+    .container-text{
+      flex: 0 0 40%;
+
+      .inner-container-text {
+        p {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .projects-container{
+    display: flex;
+    flex-direction: row;
+
+    .inner-projects-container {
+      flex: 0 0 auto;
+      flex-direction: row;
+      align-items: flex-start;
+      align-content: center;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+  }
 }
 </style>

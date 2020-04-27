@@ -67,9 +67,24 @@ header {
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     }
   }
+
+  h1 {
+    color: $secondary;
+  }
 }
 
-h1 {
-  color: $secondary;
+@media (min-width: $desktop) {
+  header {
+    display: flex;
+    flex-direction: row;
+    
+    .brand {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
 }
+
+
 </style>

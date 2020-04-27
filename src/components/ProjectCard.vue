@@ -30,6 +30,7 @@ export default {
 <style lang="scss" scoped>
 @import '../layouts/theme.scss';
 .card-project {
+  padding: 10px;
   width: 100%;
 
   img {
@@ -49,6 +50,13 @@ export default {
       top: 20px;
       right: 0;
     }
+  }
+}
+
+@media (min-width: $desktop) {
+  .card-project {
+    flex: 0 0 40%;
+    max-width: 400px;
   }
 }
 </style>
