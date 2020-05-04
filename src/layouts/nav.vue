@@ -25,6 +25,7 @@ nav {
     li {
       list-style-type: none;
       font-size: 20px;
+      padding: 10px;
 
       a {
         color: $dark;

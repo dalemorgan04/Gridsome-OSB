@@ -6,8 +6,6 @@
           <b-carousel 
             style="text-shadow: 0px 0px 2px #000"
             fade
-            img-width="1024"
-            img-height="480"
           >
             <b-carousel-slide
               v-for="image in heroImages" 
@@ -24,6 +22,11 @@
             <p>
               {{intro}}
             </p>
+            <div class="container-slogan">
+              <span class="text">helping you create your </span>
+              <span class="highlight">happpy.</span>
+              <span class="text"> home</span>
+            </div>
           </div>
         </div>
       </section>
@@ -38,13 +41,11 @@
         <h1>Feature Projects</h1>
       </div>
       <section class="projects-container">
-        <div class="inner-projects-container" >
-          <projectcards
-            v-for="edge in $page.projectCards.edges"
-            :key="edge.node.id"
-            :project="edge.node"
-          ></projectcards>
-        </div>
+        <projectcards
+          v-for="edge in $page.projectCards.edges"
+          :key="edge.node.id"
+          :project="edge.node"
+        ></projectcards>
       </section>
 
       <div class="section-title accent">
@@ -125,21 +126,13 @@ export default {
 <style lang="scss" scoped>
 @import '../layouts/theme.scss';
 
-h1 {
-  color: $dark;
-  font-size: 30px;
-}
-h2 {
-  color: $dark;
-  font-size: 20px;
-}
 .section-title {
   margin: 50px 20px 10px 20px;
 }
 
 .jumbotron-container {
   padding-top: 125px;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -149,11 +142,16 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    .carousel {
-      height: auto;
-      width: 100%;
-      box-shadow: $shadow;
-      margin-bottom: 20px;
+
+    .carousel-inner {
+      height: 20vh;
+      overflow: hidden;
+
+        .carousel {
+          width: auto;
+          box-shadow: $shadow;
+          margin-bottom: 20px;
+      }
     }
   }
   .container-text {
@@ -165,20 +163,36 @@ h2 {
 
     .inner-container-text {
       padding-bottom: 20px;
+
       .jumbotron-heading {
+        text-align: left;
         margin-left: 10px;
         padding-right: 30px;
-        text-align: left;
       }
       p {
-        padding: 0 40px;
+        text-align: right;
+        padding: 0 10px;
+      }
+      .container-slogan {
         text-align: center;
+        .text {
+          font-family: $font-slogan;
+          font-size: 14px;
+          color: $grey;
+        }
+        .highlight {
+          font-family: $font-happy;
+          font-size: 26px;
+          color: $primary;
+        }
       }
     }
   }
 }
 
 .summary-container {
+  display: none;
+
   .summary-content {
     padding: 0 40px;
     text-align: center;
@@ -192,12 +206,10 @@ h2 {
 }
 
 .projects-container{
-  .inner-projects-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .testimonials-container {
@@ -226,13 +238,6 @@ h2 {
 
 @media (min-width: $desktop) {
 
-  h1 {
-    font-size: 45px;
-  }
-  p {
-    font-size: 25px;
-  }
-
   .jumbotron-container{
     display: flex;
     flex-direction: row-reverse;
@@ -247,22 +252,37 @@ h2 {
         p {
           text-align: right;
         }
+        .container-slogan {
+          .text {
+            font-family: $font-slogan;
+            font-size: 20px;
+            color: $grey;
+          }
+          .highlight {
+            font-family: $font-happy;
+            font-size: 35px;
+            color: $primary;
+          }
+        }
       }
     }
   }
 
-  .projects-container{
-    display: flex;
-    flex-direction: row;
-
-    .inner-projects-container {
-      flex: 0 0 auto;
-      flex-direction: row;
-      align-items: flex-start;
-      align-content: center;
-      flex-wrap: wrap;
-      padding: 0 20px;
+  .summary-container {
+    .summary-content {
+      max-width: 700px;
     }
+  }
+
+  .projects-container{
+    width: 100%;
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
   }
 }
 </style>

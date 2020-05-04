@@ -57,6 +57,8 @@ header {
 
   &.minified {
     position: fixed;
+    height: 50px;
+
     .brand {
       display: none;
       transition: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -82,6 +84,11 @@ header {
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      svg {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }

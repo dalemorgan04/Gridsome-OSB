@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     image() {
-      return require(`!!assets-loader!@uploads/${this.project.card.image}`);
+      return require(`!!assets-loader?width=720&height=540&fit=cover&position=centre&quality=90!@uploads/${this.project.card.image}`);
     },
     imageAlt() {
       return this.project.title;
@@ -55,8 +55,8 @@ export default {
 
 @media (min-width: $desktop) {
   .card-project {
-    flex: 0 0 40%;
-    max-width: 400px;
+    flex: 0 0 50%;
+    // max-width: 600px;
   }
 }
 </style>

@@ -1,5 +1,13 @@
 //Fonts
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@font-face {
+    font-family: 'MONDAY';
+    src: url('../assets/fonts/MONDAY.ttf');
+}
+@font-face {
+    font-family: 'Architects Daughter';
+    src: url('../assets/fonts/ArchitectsDaughter.ttf');
+}
 
 //Screen widths
 $mobile: 576px;
@@ -12,10 +20,15 @@ $secondary: #4ABDAC;
 $warning: #ffda00;
 $danger: #E4572E;
 $success: #17BEBB;
+$black: #1A2930;
+$grey: #707070;
 $info: #3F88C5;
 $dark: #2E282A;
 $light: white;
 $font-header: 'Playfair Display', serif;
+$font-slogan: 'Architects Daughter';
+$font-happy: 'MONDAY';
+
 $shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 $enable-rounded: false;
 
@@ -24,9 +37,28 @@ $enable-rounded: false;
 
 body{
     background-color: white;
-    h1, h2 {
-        font-family: $font-header;
-    }
+}
+
+//Font size
+h1 {
+    color: $black;
+    font-size: 26px;
+    font-family: $font-header;
+}
+h2 {
+    color: $dark;
+    font-size: 18px;
+    font-family: $font-header;
+}
+h3 {
+    font-family: $font-slogan;
+}
+h4 {
+    font-family: $font-happy;
+}
+p {
+    font-size: 16px;
+    color: $black; 
 }
 
 //Floating accent
@@ -43,6 +75,8 @@ body{
         background: $primary;
     }
 }
+
+
 @media (min-width: $tablet) {
     .accent {
         position:relative;
@@ -56,5 +90,15 @@ body{
             height: 8px;
             background: $primary;
         }
-    }   
+    }
+}
+
+
+@media (min-width: $desktop) {
+    h1 {
+        font-size: 45px;
+    }
+    p {
+        font-size: 25px;
+    }
 }
