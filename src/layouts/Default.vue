@@ -6,19 +6,19 @@
       <slot/>
     </main>
 
-    <app-footer />
+    <!-- <app-footer /> -->
   </div>
 </template>
 
 <script>
 import AppHeader from './Header.vue'
-import AppFooter from './Footer.vue'
+// import AppFooter from './Footer.vue'
 
 export default {
   components: {
-    'app-header': AppHeader,
+    'app-header': AppHeader
     // 'app-nav': AppNav,
-    'app-footer': AppFooter
+    // 'app-footer': AppFooter
   },
   data() {
     return {}
