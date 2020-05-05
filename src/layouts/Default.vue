@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="d-flex flex-column">
-    <app-header />
+    <!-- <app-header /> -->
 
     <main role="main" class="main">
       <slot/>
@@ -16,7 +16,7 @@ import AppHeader from './Header.vue'
 
 export default {
   components: {
-    'app-header': AppHeader
+    // 'app-header': AppHeader
     // 'app-nav': AppNav,
     // 'app-footer': AppFooter
   },
