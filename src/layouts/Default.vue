@@ -1,12 +1,12 @@
 <template>
   <div id="app" class="d-flex flex-column">
-    <app-header />
+    <appheader />
 
     <main role="main" class="main">
       <slot/>
     </main>
 
-    <app-footer />
+    <appfooter />
   </div>
 </template>
 
@@ -17,8 +17,8 @@ import AppFooter from '~/layouts/Footer.vue'
 
 export default {
   components: {
-    'app-header': AppHeader,
-    'app-footer': AppFooter
+    appheader: AppHeader,
+    appfooter: AppFooter
   },
   data() {
     return {}
