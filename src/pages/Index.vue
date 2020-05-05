@@ -217,26 +217,6 @@ export default {
 }
 
 @media (min-width: $tablet) {
-  .container-left {
-    flex: 1 1 50%;
-    z-index: 2;
-  }
-
-  .container-right {
-    flex: 1 1 65%;
-    z-index: 1;
-    position: relative;
-
-    .container-image {
-      img {
-        width: 100%;
-        height: auto;
-      }
-    }
-  }
-}
-
-@media (min-width: $desktop) {
 
   .jumbotron-container{
     display: flex;
@@ -255,12 +235,12 @@ export default {
         .container-slogan {
           .text {
             font-family: $font-slogan;
-            font-size: 20px;
+            font-size: 16px;
             color: $grey;
           }
           .highlight {
             font-family: $font-happy;
-            font-size: 35px;
+            font-size: 26px;
             color: $primary;
           }
         }
@@ -284,5 +264,35 @@ export default {
     flex-wrap: wrap;
     padding: 0 20px;
   }
+}
+
+@media (min-width: $desktop) {
+
+  .jumbotron-container{
+
+    .container-image{
+      flex: 0 0 60%;
+    }
+    .container-text{
+      flex: 0 0 40%;
+
+      .inner-container-text {
+        .container-slogan {
+          .text {
+            font-size: 20px;
+          }
+          .highlight {
+            font-size: 35px;
+          }
+        }
+      }
+    }
+  }
+
+  .summary-container {
+    .summary-content {
+      max-width: 700px;
+    }
+  }  
 }
 </style>
