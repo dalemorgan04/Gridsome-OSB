@@ -1,24 +1,23 @@
 <template>
   <div id="app" class="d-flex flex-column">
-    <!-- <app-header /> -->
+    <app-header />
 
     <main role="main" class="main">
       <slot/>
     </main>
 
-    <!-- <app-footer /> -->
+    <app-footer />
   </div>
 </template>
 
 <script>
-// import AppHeader from './Header.vue'
-// import AppFooter from './Footer.vue'
+import AppHeader from '../layouts/Header.vue'
+import AppFooter from '../layouts/Footer.vue'
 
 export default {
   components: {
-    // 'app-header': AppHeader
-    // 'app-nav': AppNav,
-    // 'app-footer': AppFooter
+    'app-header': AppHeader,
+    'app-footer': AppFooter
   },
   data() {
     return {}
