@@ -3,8 +3,7 @@
     <g-image :src="image" class="card-img-top" />
     <div class="card-body">
       <h5 class="card-title">{{ project.title }}</h5>
-      <p class="card-text">{{ project.card.description }}</p>
-      <a href="#" class="btn btn-primary">View</a>
+      <p class="card-text">{{ project.description }}</p>
     </div>
   </div>
 </template>
@@ -19,10 +18,13 @@ export default {
   },
   computed: {
     image() {
-      return require(`!!assets-loader?width=720&height=540&fit=cover&position=centre&quality=90!@uploads/${this.project.card.image}`);
+      return require(`!!assets-loader?width=720&height=540&fit=cover&position=centre&quality=90!@uploads/${this.project.image}`);
     },
     imageAlt() {
-      return this.project.title;
+      return this.project.title;    
+    },
+    class() {
+      return 'card-project ' + this.project.class ;
     }
   }
 }
@@ -30,15 +32,23 @@ export default {
 <style lang="scss" scoped>
 @import '../layouts/theme.scss';
 .card-project {
-  padding: 10px;
+  padding: 20px;
+  padding-bottom: 100px;
   width: 100%;
+  max-width: 720px;
+  position: relative;
 
   img {
     box-shadow: $shadow;
   }
 
   .card-body {
-    position: relative;
+    position: absolute;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    bottom: 0;
+    left: 40%;
+    background: $light;
 
     .card-title {
       font-family: $font-header;
@@ -50,13 +60,6 @@ export default {
       top: 20px;
       right: 0;
     }
-  }
-}
-
-@media (min-width: $desktop) {
-  .card-project {
-    flex: 0 0 50%;
-    // max-width: 600px;
   }
 }
 </style>

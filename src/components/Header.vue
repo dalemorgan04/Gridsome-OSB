@@ -12,7 +12,8 @@ import AppNav from './Nav.vue'
 import LogoSvg from '../assets/images/logo.svg'
 export default {
   components: {
-    'app-nav': AppNav,LogoSvg
+    'app-nav': AppNav,
+    LogoSvg
   },
   beforeMount() {
     window.addEventListener('scroll', this.navScroll)
