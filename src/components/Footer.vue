@@ -13,7 +13,8 @@
           28 Ewell Road Wollaton Nottingham Ng8 2DE
         </div>
         <div class="riba">
-          <g-image src="..\assets\images\ribaLogo.png" />
+          <!-- <g-image src="..\assets\images\ribaLogo.png" fit="contain" /> -->
+          <g-image src="..\assets\uploads\house.jpg" fit="contain"/>
         </div>          
 
 
