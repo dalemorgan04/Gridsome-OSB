@@ -34,12 +34,13 @@ export default {
 .card-project {
   padding: 20px;
   padding-bottom: 100px;
-  width: 100%;
-  max-width: 720px;
+  width: 100%;  
   position: relative;
-
+  overflow: hidden;
   img {
     box-shadow: $shadow;
+    width: 100%;
+
   }
 
   .card-body {

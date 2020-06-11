@@ -71,15 +71,17 @@
       </section>
 
       <section class="testimonials-container">
-        <h1>Here's what some of our Happy People had to say</h1>
+        <h1>Here's what some of our<br> Happy People had to say</h1>
         <div class="quote-container accent-bottom">
-          <QuoteSvg />
-          <p class="quote accent">
-            We have found Samantha to be extremely approachable, patient and easy to communicate with.
-            We have been delighted with our experience.
-          </p>
+          <div class="quote accent">
+            <quote class="lquote"/>
+            <p class="">
+              We have found Samantha to be extremely approachable, patient and easy to communicate with.
+              We have been delighted with our experience.
+            </p>
+          </div>
           <p class="client">Katie &amp; John 2018</p>
-          <span class="rquote">&rdquo;</span>
+          <quote class="rquote"/>
         </div>
       </section>
 
@@ -148,7 +150,8 @@ import QuoteSvg from '../assets/images/quote.svg'
 export default {  
   components: {
     projectcards: ProjectCard,
-    testimonials: Testimonial
+    testimonials: Testimonial,
+    quote: QuoteSvg
   },
   data: function() {
     return {
@@ -286,63 +289,74 @@ export default {
 }
 
 .projects-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 20px;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // padding: 0 20px;
 
-  .card-project:nth-child(1){
-    flex: 0 0 60%;
-  }
-  .card-project:nth-child(2){
-    flex: 0 0 40%;
-  }
-  .card-project:nth-child(3){
-    flex: 0 0 30%;
-  }
-  .card-project:nth-child(4){
-    flex: 0 0 70%;
-  }
+  // .card-project:nth-child(1){
+  //   flex: 0 0 60%;
+  // }
+  // .card-project:nth-child(2){
+  //   flex: 0 0 40%;
+  // }
+  // .card-project:nth-child(3){
+  //   flex: 0 0 30%;
+  // }
+  // .card-project:nth-child(4){
+  //   flex: 0 0 70%;
+  // }
 }
 
 .testimonials-container {    
-  margin: 50px 20px;  
-  padding: 0 20px;
+  margin: 20vh 40px;
   display: flex;
   align-content: center;
+  
+  h1 {
+    text-align: right;
+    white-space: nowrap;
+  }
 
   .quote-container {
-    flex: 1 1 80%;
+    flex: 1 1 60%;
     position: relative;
     font-family: $font-slogan;
     color: $grey;
     width: 50%;
-    padding: 50px;
+    padding: 0 50px;
 
     .client{      
       text-align: right;
       padding: 10px;
     }
-    .lquote, .rquote {
-      position: absolute;
-      font-family: $font-header;
-      font-size: 100px;
+    .quote {
+      p{
+        padding: 20px 40px 0 40px;
+      }
     }
     .lquote {
+      position: absolute;
       top: 0;
       left: 0;
+      width: 30px;
+      height: 30px;
     }
     .rquote {
-      bottom: 0;
-      right: 0;
+      position: absolute;
+      bottom: 4px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
     }
+
   }
 }
 
 .you-container{
   width: 50%;
   padding: 40px;
-  margin: 0 auto;
+  margin: 20vh auto;
   text-align: center;
 
   .title {
@@ -409,13 +423,41 @@ export default {
 
   .projects-container{
     width: 100%;
-    flex: 0 0 auto;
-    flex-direction: row;
-    align-items: flex-start;
-    align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0 20px;
+    padding: 0 10%;
+    display: grid;
+    grid-template-columns: 5% 45% 40% 10%;
+    grid-template-rows: auto auto auto auto auto;
+      .card-project {
+        img{
+          width: 100%;
+        }
+      }
+      .card-project:nth-child(1){
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 2;
+      }
+      .card-project:nth-child(2){
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 2;
+
+        .card-body{
+          left: 10%;
+          width: 80%;
+        }
+      }
+      .card-project:nth-child(3){
+        grid-column: 1 / span 2;
+        grid-row: 3 / span 2;
+
+        .card-body{
+          left: 0%;
+          width: 50%;
+        }
+      }
+      .card-project:nth-child(4){
+        grid-column: 3 / span 2;
+        grid-row: 4 / span 2;
+      }
   }
 }
 
