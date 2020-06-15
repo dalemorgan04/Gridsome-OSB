@@ -39,15 +39,21 @@
 
 <script>
   import LogoSvg from '../assets/images/logo.svg'
+  import RibaLogo from '~/assets/images/ribaLogo.png'  
   export default {
-  components: {
-    LogoSvg
-  },
-  computed: {
-    image() {
-      return require(`..\\assets\\uploads\\house.jpg`);
+    components: {
+      LogoSvg
+    },
+    data: function () 
+    { 
+      return {
+        image: RibaLogo,
+        logo: LogoSvg
+      }
+    },
+    computed: {
     }
-  }}
+  }
 </script>
 
 <style scoped lang="scss">
