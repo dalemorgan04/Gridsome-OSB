@@ -36,7 +36,7 @@
 
       <section class="summary-container">
         <div class="summary-image" >
-          <g-image src="..\assets\uploads\house.jpg" fit="contain"/>
+          <g-image :src="houseImage" fit="contain"/>
         </div>
         <div class="summary-content">
           <h1>Inspiring Architectural Design Solutions that Focus on your Wellbeing</h1>
@@ -146,6 +146,7 @@ query {
 import ProjectCard from '../components/ProjectCard.vue'
 import Testimonial from '../components/Testimonial.vue'
 import QuoteSvg from '../assets/images/quote.svg'
+import House from '../assets/uploads/house.jpg'
 
 export default {  
   components: {
@@ -161,7 +162,8 @@ export default {
         { id: 2, image:'20191208_120024.jpg', title: 'Socialable space', description: 'A complete reconfiguration of this family home in Long Eaton to create a social open plan living space with improved connections to the garden'},
         { id: 3, image:'20191208_120024.jpg', title: 'Contemporary transformation', description: 'Amazing contemporary transformation of this semi detached 1930s property in Wollaton ona tight budget'},
         { id: 4, image:'20191208_120024.jpg', title: 'Creating a light filled space', description: 'Enhancing natural daylight to create a happy environment'}
-      ]
+      ],
+      houseImage: House
     }
   },
   computed: {
