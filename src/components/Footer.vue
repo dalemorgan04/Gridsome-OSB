@@ -14,7 +14,7 @@
         </div>
         <div class="riba">
           <!-- <g-image src="..\assets\images\ribaLogo.png" fit="contain" /> -->
-          <g-image src="..\assets\uploads\house.jpg" fit="contain"/>
+          <g-image :src="image" fit="contain"/>
         </div>          
 
 
@@ -42,6 +42,11 @@
   export default {
   components: {
     LogoSvg
+  },
+  computed: {
+    image() {
+      return require(`..\\assets\\uploads\\house.jpg`);
+    }
   }}
 </script>
 
