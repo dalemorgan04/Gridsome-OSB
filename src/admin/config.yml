@@ -6,40 +6,6 @@ media_folder: "src/assets/uploads"
 public_folder: ""
 
 collections:
-  - name: "projects"
-    label: "Projects"
-    description: "Includes settings for project pages and project preview cards"
-    folder: "content/projects"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
-    fields:
-      - {label: "Project Name", name: "title", widget: "string"}
-      - name: "card"
-        label: "Preview Card"
-        widget: "object"
-        fields:
-          - {label: "Description", name: "description", widget: "string"}
-          - {label: "Image", name: image, widget: image}
-      - name: "projectPage"
-        label: "Project Page"
-        widget: "object"
-        fields:
-          - {label: "Description", name: "description", widget: "string"}
-          - label: "Images"
-            name: "imageList"
-            widget: "list"
-            fields:
-              - {label: "Image", name: "image", widget: "image"}
-  - name: "testimonials"
-    label: "Testimonials"
-    description: "Testimonials shown on the Home Page"
-    folder: "content/testimonials"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
-    fields:
-      - {label: "Customer Name", name: "title", widget: "string"}
-      - {label: "Testimonial Text", name: "text", widget: "string"}
-      - {label: "Customer Image", name: "image", widget: "image"}
   - label: "Pages"
     name: "pages"
     description: "Content and settings for individual pages"
@@ -48,13 +14,35 @@ collections:
         name: "home"
         file: "content/pages/home.yml"
         fields:
-          - {label: "Introduction", name: "intro", widget: "string"}
-          - label: "HeroImages"
-            name: "heroImages"
-            widget: "list"
+          - label: "Landing Section"
+            name: "landingSection"
+            widget: "object"
+            fields:            
+              - {label: "Title", name: "landingTitle", widget: "string"}
+              - {label: "Subtext", name: "landingSubtext", widget: "string"}
+              - label: "Carousel Images"
+                name: "landingImages"
+                widget: "list"
+                fields:
+                  - {label: "Landing Image", name: "landingImage", widget: "image"}
+          - label: "Summary Section"
+            name: "summarySection"
+            widget: "object"
             fields:
-              - {label: "Image", name: "image", widget: "image"}
-          - {label: "Opening Text", name: "summary", widget: "string"}
+              - {label: "Title", name: "summaryTitle", widget: "string"}
+              - {label: "Text", name: "summaryText", widget: "string"}
+              - {label: "Static Image", name: "summaryImage", widget: "image"}
+          - label: "Feature Projects"
+            name: "featureProjects"
+            widget: "object"
+            fields:
+              - {label: "Image 1", name: "featureImage1", widget: "image"}
+              - {label: "Image 1 Title", name: "featureTitle1", widget: "string"}
+              - {label: "Image 1 Description", name: "featureText1", widget: "string"}
+              - {label: "Image 2", name: "featureImage2", widget: "image"}
+              - {label: "Image 2 Title", name: "featureTitle2", widget: "string"}
+              - {label: "Image 2 Description", name: "featureText2", widget: "string"}
+
       - label: "About Page"
         name: "about"
         file: "content/pages/about.yml"

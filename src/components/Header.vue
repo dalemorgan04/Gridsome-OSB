@@ -52,7 +52,7 @@ header {
   .brand {
     svg {
       width: 100%;
-      height: 75px;
+      max-height: 75px;
     }
   }
 

@@ -87,7 +87,7 @@
 
       <section class="you-container">
         <h1 class="title">
-          Would you like help with
+          Would you like help with<wbr>
           <span class="highlight"> Your Project</span>?
         </h1>
         <p class="text">
@@ -98,7 +98,8 @@
           Please get in touch for further information or to arrange a free, no obligation
           initial meeting.
         </p>
-        <g-link >Contact us</g-link> 
+        <button class="btn btn-primary shadow">CONTACT</button>
+        <!-- <g-link class="btn btn-primary">CONTACT</g-link>  -->
       </section>
 
     </div>
@@ -219,11 +220,11 @@ export default {
     }
   }
   .container-text {
-    padding: 20px;
-    flex: 0 1 auto;
     display: flex;
+    flex: 0 1 auto;
     flex-direction: column;
     justify-content: center;
+    padding: 30px 20px;
 
     .inner-container-text {
       padding-bottom: 20px;
@@ -255,24 +256,30 @@ export default {
 }
 
 .summary-container {
-  padding-top: 125px;
-  min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 
   .summary-image {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     img {
       box-shadow: $shadow;
+      width: 100%;
+      height: auto;
     }
   }
+
   .summary-content {
-    flex: 0 1 auto;    
+    flex: 1 1 auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    margin: 40px;
+    padding: 40px 40px 0 40px;
 
     h1 {
       text-align: left;      
@@ -290,43 +297,24 @@ export default {
   }
 }
 
-.projects-container{
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // padding: 0 20px;
-
-  // .card-project:nth-child(1){
-  //   flex: 0 0 60%;
-  // }
-  // .card-project:nth-child(2){
-  //   flex: 0 0 40%;
-  // }
-  // .card-project:nth-child(3){
-  //   flex: 0 0 30%;
-  // }
-  // .card-project:nth-child(4){
-  //   flex: 0 0 70%;
-  // }
-}
+.projects-container{}
 
 .testimonials-container {    
-  margin: 20vh 40px;
+  margin: 40px 20px 40px 30px;
   display: flex;
+  flex-direction: column;
   align-content: center;
   
   h1 {
-    text-align: right;
+    text-align: left;
     white-space: nowrap;
   }
 
   .quote-container {
-    flex: 1 1 60%;
     position: relative;
     font-family: $font-slogan;
     color: $grey;
-    width: 50%;
-    padding: 0 50px;
+    padding: 20px 0;
 
     .client{      
       text-align: right;
@@ -356,17 +344,18 @@ export default {
 }
 
 .you-container{
-  width: 50%;
-  padding: 40px;
-  margin: 20vh auto;
+  width: 100%;
+  padding: 40px 20px;
+  margin: 40px auto;
   text-align: center;
 
   .title {
-
+    
     .highlight{
       color: $primary;
-      font-size: 60px;
+      font-size: 45px;
       font-family: $font-happy;
+      white-space: nowrap;
     }
   }
 
@@ -407,10 +396,12 @@ export default {
 
   .summary-container {
     flex-direction: row;
+    margin-top: 30px;
 
     .summary-image {
       flex: 0 0 60%;
       position: relative;
+
       img {
         width: 100%;
       }
@@ -418,6 +409,7 @@ export default {
     .summary-content {
       flex: 0 0 40%;
       max-width: 700px;
+      
 
 
     }
@@ -425,9 +417,9 @@ export default {
 
   .projects-container{
     width: 100%;
-    padding: 0 10%;
+    padding: 0 20px;
     display: grid;
-    grid-template-columns: 5% 45% 40% 10%;
+    grid-template-columns: 5% 45% 45% 5%;
     grid-template-rows: auto auto auto auto auto;
       .card-project {
         img{
@@ -437,24 +429,16 @@ export default {
       .card-project:nth-child(1){
         grid-column: 2 / span 1;
         grid-row: 1 / span 2;
+        text-align: right;
       }
       .card-project:nth-child(2){
         grid-column: 3 / span 1;
         grid-row: 2 / span 2;
-
-        .card-body{
-          left: 10%;
-          width: 80%;
-        }
       }
       .card-project:nth-child(3){
         grid-column: 1 / span 2;
         grid-row: 3 / span 2;
-
-        .card-body{
-          left: 0%;
-          width: 50%;
-        }
+        text-align: right;
       }
       .card-project:nth-child(4){
         grid-column: 3 / span 2;
@@ -487,9 +471,47 @@ export default {
   }
 
   .summary-container {
+    margin: 60px 0 200px 0;
+
     .summary-content {
       max-width: 700px;
     }
+  }
+
+  .projects-container{
+    margin-bottom: 160px;
+  }
+
+  .testimonials-container {    
+    flex-direction: row;
+    padding: 0 50px;
+    margin-bottom: 100px;
+
+    h1 {
+      padding-right: 30px;
+    }
+
+    .quote-container{
+      flex: 1 1 60%;
+      width: 50%;
+      padding-top: 0;
+    }
   }  
+
+  .you-container{
+    width: 50%;
+    padding: 40px;
+    margin: 80px auto;
+    text-align: center;
+
+    .title {
+
+      .highlight{
+        color: $primary;
+        font-size: 60px;
+        font-family: $font-happy;
+      }
+    }
+  }
 }
 </style>

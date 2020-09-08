@@ -2,8 +2,8 @@
   <div class="card-project">
     <g-image :src="image" class="card-img-top" />
     <div class="card-body">
-      <h5 class="card-title">{{ project.title }}</h5>
-      <p class="card-text">{{ project.description }}</p>
+      <h5 class="card-title h2">{{ project.title }}</h5>
+      <p class="card-text p">{{ project.description }}</p>
     </div>
   </div>
 </template>
@@ -33,10 +33,10 @@ export default {
 @import '../layouts/theme.scss';
 .card-project {
   padding: 20px;
-  padding-bottom: 100px;
   width: 100%;  
   position: relative;
   overflow: hidden;
+
   img {
     box-shadow: $shadow;
     width: 100%;
@@ -44,23 +44,35 @@ export default {
   }
 
   .card-body {
-    position: absolute;
+    position: static;
     margin-right: 10px;
-    margin-bottom: 10px;
     bottom: 0;
     left: 40%;
     background: $light;
 
     .card-title {
       font-family: $font-header;
-      font-size: 30px;
-      margin-right: 40px;
+      font-size: 24px;
     }
     a {
       position: absolute;
       top: 20px;
       right: 0;
     }
+  }
+}
+@media(min-width: $desktopL){
+  .card-project {
+    padding-bottom: 100px;
+
+     .card-body {
+      position: absolute;
+      margin-bottom: 10px;
+
+      .card-title{
+        margin-right: 40px;
+      }
+     }
   }
 }
 </style>

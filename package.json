@@ -12,6 +12,7 @@
     "@gridsome/transformer-yaml": "^0.2.1",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.11.0",
+    "fb-watchman": "^2.0.1",
     "gridsome": "^0.7.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "netlify-cms": "^2.10.44",

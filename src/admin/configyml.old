@@ -1,0 +1,71 @@
+backend:
+  name: github
+  repo: dalemorgan04/Gridsome-OSB
+
+media_folder: "src/assets/uploads"
+public_folder: ""
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    description: "Includes settings for project pages and project preview cards"
+    folder: "content/projects"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    fields:
+      - {label: "Project Name", name: "title", widget: "string"}
+      - name: "card"
+        label: "Preview Card"
+        widget: "object"
+        fields:
+          - {label: "Description", name: "description", widget: "string"}
+          - {label: "Image", name: image, widget: image}
+      - name: "projectPage"
+        label: "Project Page"
+        widget: "object"
+        fields:
+          - {label: "Description", name: "description", widget: "string"}
+          - label: "Images"
+            name: "imageList"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+  - name: "testimonials"
+    label: "Testimonials"
+    description: "Testimonials shown on the Home Page"
+    folder: "content/testimonials"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    fields:
+      - {label: "Customer Name", name: "title", widget: "string"}
+      - {label: "Testimonial Text", name: "text", widget: "string"}
+      - {label: "Customer Image", name: "image", widget: "image"}
+  - label: "Pages"
+    name: "pages"
+    description: "Content and settings for individual pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "content/pages/home.yml"
+        fields:
+          - {label: "Introduction", name: "intro", widget: "string"}
+          - label: "HeroImages"
+            name: "heroImages"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+          - {label: "Opening Text", name: "summary", widget: "string"}
+      - label: "About Page"
+        name: "about"
+        file: "content/pages/about.yml"
+        fields:
+          - {label: "Content", name: "body", widget: "markdown"}
+  - label: "Settings"
+    name: "settings"
+    description: "General site information and settings"
+    files:
+      - label: "Site Settings"
+        name: "siteSettings"
+        file: "content/settings/site-settings.yml"
+        fields:
+          - {label: "Site Name", name: "siteName" , widget: "string" }

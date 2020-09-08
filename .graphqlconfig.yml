@@ -1,0 +1,16 @@
+projects:
+  app:
+    schemaPath: src/schema.graphql
+    includes: ["*.vue"]
+    extensions:
+      endpoints:
+        default: http://localhost:8080
+  db:
+    schemaPath: src/generated/db.graphql
+    includes: ["*.vue"]
+    extensions:
+      codegen:
+      - generator: graphql-binding
+        language: typescript
+        output:
+          binding: src/generated/db.ts

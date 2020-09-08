@@ -4,26 +4,27 @@
     <div class="container-info">
       
       <div class="container-left">
-
-        <div class="logo">
-          <LogoSvg />
-        </div>
         <div class="copyright">
           Copyright OSB Architects Ltd <br>
           28 Ewell Road Wollaton Nottingham Ng8 2DE
         </div>
         <div class="riba">
           <g-image :src="image" fit="contain"/>
-        </div>          
-
-
+        </div>
       </div>
 
       <div class="container-right">
+          <div class="logo">
+            <LogoSvg />
+          </div>
           <small>
             helping you create your <span>Happy.</span>
           </small>
-          <div class="contact">CONTACT</div>
+          <div class="contact">
+            <a href='#' class="btn btn-primary">
+              CONTACT
+            </a>
+          </div>
       </div>
 
     </div>
@@ -65,27 +66,18 @@
 
     .container-info{
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
 
       .container-left{
-        flex: 0 0 50%;
+        flex: 1 1 50%;
+        flex-direction: column;
 
-        .logo {
-          width: 100%;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
 
-          svg {
-            height: 90px;
-            width: auto;
-          }
-        }
         .copyright {
           margin: 20px 0;
           text-align: center;
           color: $grey;
-          font-size: 20px;
+          font-size: 18px;
         }
 
         .riba{
@@ -98,20 +90,29 @@
       }
 
       .container-right{
-        flex: 0 0 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        display: none;
 
+        .logo {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+
+          svg {
+            height: 70px;
+            width: auto;
+          }
+        }
+        
         small{
           text-align: center;
-          font-size: 50px;
+          font-size: 30px;
           color: $grey;
 
           span{
             font-family: $font-happy;
             color: $primary;
-            font-size: 60px;
+            font-size: 40px;
           }
         }
         .contact{
@@ -126,6 +127,36 @@
         color: $grey;
         text-align: center;
         font-size: 20px;
+        padding-top: 20px;
+    }
+  }
+  @media (min-width: $tablet){
+    footer {
+      .container-info{
+        flex-direction: row;
+
+        .container-right{
+          flex: 1 1 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop){
+    footer {
+      .container-info{
+        flex-direction: row;
+
+        .container-right{
+          flex: 1 1 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
     }
   }
 </style>
