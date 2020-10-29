@@ -52,10 +52,6 @@
 
       <div class="section-title accent">
         <h1>Feature Projects</h1>
-        <p>
-          Here is a small selection of our completed projects
-          Please take a look at our full gallery here
-        </p>
       </div>
       <section class="projects-container">
         <!-- <projectcards
