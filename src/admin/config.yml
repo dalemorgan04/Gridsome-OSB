@@ -36,13 +36,34 @@ collections:
             name: "featureProjects"
             widget: "object"
             fields:
-              - {label: "Image 1", name: "featureImage1", widget: "image"}
-              - {label: "Image 1 Title", name: "featureTitle1", widget: "string"}
-              - {label: "Image 1 Description", name: "featureText1", widget: "string"}
-              - {label: "Image 2", name: "featureImage2", widget: "image"}
-              - {label: "Image 2 Title", name: "featureTitle2", widget: "string"}
-              - {label: "Image 2 Description", name: "featureText2", widget: "string"}
-
+              - label: "Image 1",
+                name: "featureImage1"
+                widget: "object"
+                fields:
+                  - {label: "Image 1", name: "featureImage1", widget: "image"}              
+                  - {label: "Image 1 Title", name: "featureTitle1", widget: "string"}
+                  - {label: "Image 1 Description", name: "featureText1", widget: "string"}
+              - label: "Image 2",
+                name: "featureImage2"
+                widget: "object"
+                fields:
+                  - {label: "Image 2", name: "featureImage2", widget: "image"}              
+                  - {label: "Image 2 Title", name: "featureTitle2", widget: "string"}
+                  - {label: "Image 2 Description", name: "featureText2", widget: "string"}
+              - label: "Image 3",
+                name: "featureImage3"
+                widget: "object"
+                fields:
+                  - {label: "Image 3", name: "featureImage3", widget: "image"}
+                  - {label: "Image 3 Title", name: "featureTitle3", widget: "string"}
+                  - {label: "Image 3 Description", name: "featureText3", widget: "string"}
+              - label: "Image 4",
+                name: "featureImage4"
+                widget: "object"
+                fields:
+                  - {label: "Image 4", name: "featureImage4", widget: "image"}
+                  - {label: "Image 4 Title", name: "featureTitle4", widget: "string"}
+                  - {label: "Image 4 Description", name: "featureText4", widget: "string"}
       - label: "About Page"
         name: "about"
         file: "content/pages/about.yml"
