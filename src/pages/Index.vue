@@ -108,10 +108,7 @@ query {
     edges {
       node {
         intro
-        summary        
-        heroImages {
-          image
-        }
+        summary
       }
     }
   },
@@ -168,9 +165,9 @@ export default {
     summary() { return this.$page.homeContent.edges[0].node.summary},
     heroImages() { 
       var images = [];
-      this.$page.homeContent.edges[0].node.heroImages.forEach( i => {
-        images.push(require(`!!assets-loader!@uploads/${i.image}`));
-      });
+      // this.$page.homeContent.edges[0].node.heroImages.forEach( i => {
+      //   images.push(require(`!!assets-loader!@uploads/${i.image}`));
+      // });
       return images;
     },
     heroImage() {
