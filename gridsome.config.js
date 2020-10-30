@@ -6,7 +6,7 @@
 
 module.exports = {
   siteName: 'Gridsome',
-  port: '44300',
+  port: '44301',
   transformers: {
     remark: {
       externalLinksTarget: '_blank',

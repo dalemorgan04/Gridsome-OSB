@@ -102,45 +102,10 @@
   </Layout>
 </template>
 
-<page-query>
-query {
-  homeContent: allHomeContent {
-    edges {
-      node {
-        intro
-        summary
-      }
-    }
-  },
-  projectCards: allProjects {
-    edges {
-      node {
-        id
-        card {
-          image
-          description          
-        }
-      }
-    }
-  },
-   testimonials: allTestimonials {
-    edges {
-      node {
-        id
-        title
-        text
-        image
-      }
-    }
-  }  
-}
-</page-query>
-
 <script>
 import ProjectCard from '../components/ProjectCard.vue'
 import Testimonial from '../components/Testimonial.vue'
 import QuoteSvg from '../assets/images/quote.svg'
-import House from '../assets/uploads/front.jpg'
 
 export default {  
   components: {
@@ -156,15 +121,15 @@ export default {
         { id: 2, image:'lounge.jpg', title: 'Socialable space', description: 'A complete reconfiguration of this family home in Long Eaton to create a social open plan living space with improved connections to the garden'},
         { id: 3, image:'rear_garden.jpg', title: 'Contemporary transformation', description: 'Amazing contemporary transformation of this semi detached 1930s property in Wollaton ona tight budget'},
         { id: 4, image:'sliding_door.jpg', title: 'Creating a light filled space', description: 'Enhancing natural daylight to create a happy environment'}
-      ],
-      houseImage: House
+      ]
     }
   },
   computed: {
-    intro() { return this.$page.homeContent.edges[0].node.intro},
-    summary() { return this.$page.homeContent.edges[0].node.summary},
+    intro() { return "test" },//this.$page.homeContent.edges[0].node.intro},
+    summary() { return "summary" }, // this.$page.homeContent.edges[0].node.summary},
     heroImages() { 
       var images = [];
+      images.push(require(`!!assets-loader!@uploads/front.jpg`));
       // this.$page.homeContent.edges[0].node.heroImages.forEach( i => {
       //   images.push(require(`!!assets-loader!@uploads/${i.image}`));
       // });
