@@ -129,7 +129,7 @@ export default {
     summary() { return "summary" }, // this.$page.homeContent.edges[0].node.summary},
     heroImages() { 
       var images = [];
-      images.push(require(`!!assets-loader!@uploads/front.jpg`));
+      // images.push(require(`!!assets-loader!@uploads/front.jpg`));
       // this.$page.homeContent.edges[0].node.heroImages.forEach( i => {
       //   images.push(require(`!!assets-loader!@uploads/${i.image}`));
       // });
