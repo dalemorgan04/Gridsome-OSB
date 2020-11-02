@@ -1,6 +1,6 @@
 <template>
   <div class="card-project">
-    <g-image :src="image" class="card-img-top" />
+    <!-- <g-image :src="image" class="card-img-top" /> -->
     <div class="card-body">
       <h5 class="card-title h2">{{ project.title }}</h5>
       <p class="card-text p">{{ project.description }}</p>

@@ -3,18 +3,18 @@
     <div>
       <section class="jumbotron-container">
         <div class="container-image">
-          <g-image v-if="!useHeroCarousel"
-            :src="heroImage" class="card-img-top" />
+          <!-- <g-image v-if="!useHeroCarousel"
+            :src="heroImage" class="card-img-top" /> -->
           <b-carousel 
             v-if="useHeroCarousel"
             style="text-shadow: 0px 0px 2px #000"
             fade           
           >
-            <b-carousel-slide
+            <!-- <b-carousel-slide
               v-for="image in heroImages" 
               :key="image.index"
               :img-src="image.src"
-            ></b-carousel-slide>
+            ></b-carousel-slide> -->
           </b-carousel>
         </div>
         <div class="container-text">
@@ -36,7 +36,7 @@
 
       <section class="summary-container">
         <div class="summary-image" >
-          <g-image :src="houseImage" fit="contain"/>
+          <!-- <g-image :src="houseImage" fit="contain"/> -->
         </div>
         <div class="summary-content">
           <h1>Inspiring Architectural Design Solutions that Focus on your Wellbeing</h1>
