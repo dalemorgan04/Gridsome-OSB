@@ -4,7 +4,7 @@
       <section class="jumbotron-container">
         <div class="container-image">
           <g-image v-if="!useHeroCarousel"
-            :src="heroImage" class="card-img-top" />
+            :src="landingImage" class="card-img-top" />
           <b-carousel 
             v-if="useHeroCarousel"
             style="text-shadow: 0px 0px 2px #000"
@@ -52,6 +52,7 @@
 
       <div class="section-title accent">
         <h1>Feature Projects</h1>
+        {{this.$page.home.edges[0].node.landingSection.landingImages[0].landingImage}}
       </div>
       <section class="projects-container">
         <!-- <projectcards
@@ -104,7 +105,7 @@
 
 <page-query>
 query {
-  homeContent: allHomeContent {
+  home: allHomeContent {
     edges {
       node {
         landingSection {
@@ -172,6 +173,11 @@ export default {
   computed: {
     intro() { return "test" },//this.$page.homeContent.edges[0].node.intro},
     summary() { return "summary" }, // this.$page.homeContent.edges[0].node.summary},
+    landingImage(){ 
+      var image = this.$page.home.edges[0].node.landingSection.landingImages[0].landingImage;
+      // return require.resolve("../assets/uploads/" + image);
+      return require(`!!assets-loader!@uploads/${image}`);
+      },
     heroImages() { 
       var images = [];
       // images.push(require(`!!assets-loader!@uploads/front.jpg`));
@@ -179,10 +185,6 @@ export default {
       //   images.push(require(`!!assets-loader!@uploads/${i.image}`));
       // });
       return images;
-    },
-    heroImage() {
-      var image = this.$page.homeContent.edges[0].node.landingSection.landingImages[0].landingImage;
-      return require(`!!assets-loader!@uploads/${image}`);
     }
   },
   methods: {}
