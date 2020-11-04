@@ -4,7 +4,7 @@
       <section class="jumbotron-container">
         <div class="container-image">
           <g-image v-if="!useHeroCarousel"
-            :src="landingImage" class="card-img-top" />
+            src="../assets/uploads/front.jpg" class="card-img-top" />
           <b-carousel 
             v-if="useHeroCarousel"
             style="text-shadow: 0px 0px 2px #000"
@@ -176,7 +176,8 @@ export default {
     landingImage(){ 
       var image = this.$page.home.edges[0].node.landingSection.landingImages[0].landingImage;
       // return require.resolve("../assets/uploads/" + image);
-      return require(`!!assets-loader!@uploads/${image}`);
+      return "";
+      // return require(`!!assets-loader!@uploads/${image}`);
       },
     heroImages() { 
       var images = [];
