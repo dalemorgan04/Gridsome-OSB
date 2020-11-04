@@ -3,8 +3,8 @@
     <div>
       <section class="jumbotron-container">
         <div class="container-image">
-          <!-- <g-image v-if="!useHeroCarousel"
-            :src="heroImage" class="card-img-top" /> -->
+          <g-image v-if="!useHeroCarousel"
+            src="/uploads/images/front.jpg" class="card-img-top" />
           <b-carousel 
             v-if="useHeroCarousel"
             style="text-shadow: 0px 0px 2px #000"
@@ -52,6 +52,7 @@
 
       <div class="section-title accent">
         <h1>Feature Projects</h1>
+        {{this.$page.home.edges[0].node.landingSection.landingImages[0].landingImage}}
       </div>
       <section class="projects-container">
         <!-- <projectcards
@@ -102,6 +103,51 @@
   </Layout>
 </template>
 
+<page-query>
+query {
+  home: allHomeContent {
+    edges {
+      node {
+        landingSection {
+          landingTitle
+          landingSubtext
+          landingImages {
+            landingImage
+          }
+        }
+        summarySection {
+          summaryTitle
+          summaryText
+          summaryImage
+        }
+        featureProjects {
+          featureImage1 {
+            featureTitle1
+            featureText1
+            featureImage1
+          }
+          featureImage2 {
+            featureTitle2
+            featureText2
+            featureImage2
+          }
+          featureImage3 {
+            featureTitle3
+            featureText3
+            featureImage3
+          }
+          featureImage4 {
+            featureTitle4
+            featureText4
+            featureImage4
+          }
+        }
+      }
+    }
+  }
+}
+</page-query>
+
 <script>
 import ProjectCard from '../components/ProjectCard.vue'
 import Testimonial from '../components/Testimonial.vue'
@@ -121,12 +167,18 @@ export default {
         { id: 2, image:'lounge.jpg', title: 'Socialable space', description: 'A complete reconfiguration of this family home in Long Eaton to create a social open plan living space with improved connections to the garden'},
         { id: 3, image:'rear_garden.jpg', title: 'Contemporary transformation', description: 'Amazing contemporary transformation of this semi detached 1930s property in Wollaton ona tight budget'},
         { id: 4, image:'sliding_door.jpg', title: 'Creating a light filled space', description: 'Enhancing natural daylight to create a happy environment'}
-      ]
+      ]      
     }
   },
   computed: {
     intro() { return "test" },//this.$page.homeContent.edges[0].node.intro},
     summary() { return "summary" }, // this.$page.homeContent.edges[0].node.summary},
+    landingImage(){ 
+      var image = this.$page.home.edges[0].node.landingSection.landingImages[0].landingImage;
+      // return require.resolve("../assets/uploads/" + image);
+      return "";
+      // return require(`!!assets-loader!@uploads/${image}`);
+      },
     heroImages() { 
       var images = [];
       // images.push(require(`!!assets-loader!@uploads/front.jpg`));
@@ -134,9 +186,6 @@ export default {
       //   images.push(require(`!!assets-loader!@uploads/${i.image}`));
       // });
       return images;
-    },
-    heroImage() {
-      return this.heroImages[0];
     }
   },
   methods: {}

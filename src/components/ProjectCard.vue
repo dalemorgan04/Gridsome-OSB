@@ -18,7 +18,8 @@ export default {
   },
   computed: {
     image() {
-      return require(`!!assets-loader?width=720&height=540&fit=cover&position=centre&quality=90!@uploads/${this.project.image}`);
+      return "";
+      // return require(`!!assets-loader?width=720&height=540&fit=cover&position=centre&quality=90!@uploads/${this.project.image}`);
     },
     imageAlt() {
       return this.project.title;    

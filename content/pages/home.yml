@@ -1,6 +1,6 @@
 landingSection:
   landingImages:
-    - landingImage: front.JPG
+    - landingImage: /uploads/images/front.jpg
   landingTitle: Inspiring Architectural Design Solutions for your home
   landingSubtext: OSB Architects offers proffesional, reliable and friendly
     architectural Design services to suit your requirements. Our designs are
@@ -12,23 +12,23 @@ summarySection:
     architectural Design services to suit your requirements. Our designs are
     both practical and delightful. OSB architects believe it really is the
     little things that matter. With a keen attention to detail
-  summaryImage: skylight.JPG
+  summaryImage: skylight.jpg
 featureProjects:
   featureImage1:
-    featureImage1: conservatory.JPG
+    featureImage1: /uploads/images/conservatory.jpg
     featureTitle1: Small extension with a big impact
     featureText1: A sensitive design approach in the Mapperley Park Conservation area
   featureImage2:
-    featureImage2: kitchen.jpg
+    featureImage2: /uploads/images/kitchen.jpg
     featureTitle2: Creating a light filled space
     featureText2: Enhancing natural daylight to create a happy environment
   featureImage3:
-    featureImage3: rear_garden.JPG
+    featureImage3: /uploads/images/rear_garden.jpg
     featureText3: Amazing contemporary transformation of this semi detached 1930s
       property in Wollaton ona tight budget
     featureTitle3: Small extension with a big impact
   featureImage4:
-    featureImage4: sliding_door.jpg
+    featureImage4: /uploads/images/sliding_door.jpg
     featureText4: Amazing contemporary transformation of this semi detached 1930s
       property in Wollaton ona tight budget
     featureTitle4: Small extension with a big impact
