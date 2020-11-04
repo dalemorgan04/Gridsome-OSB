@@ -27,7 +27,8 @@ export default {
   },
   computed: {
     image() {
-      return require(`!!assets-loader!@uploads/${this.testimonial.image}`);
+      return "";
+      // return require(`!!assets-loader!@uploads/${this.testimonial.image}`);
     }
   }
 }

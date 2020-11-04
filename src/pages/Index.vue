@@ -4,7 +4,7 @@
       <section class="jumbotron-container">
         <div class="container-image">
           <g-image v-if="!useHeroCarousel"
-            src="../assets/uploads/front.jpg" class="card-img-top" />
+            src="/uploads/images/front.jpg" class="card-img-top" />
           <b-carousel 
             v-if="useHeroCarousel"
             style="text-shadow: 0px 0px 2px #000"

@@ -2,8 +2,9 @@ backend:
   name: github
   repo: dalemorgan04/Gridsome-OSB
 
-media_folder: "src/assets/uploads"
-public_folder: "static/assets"
+media_folder: "static/uploads"
+public_folder: "/uploads"
+site_url: "https://osbarchitects.netlify.app"
 
 collections:
   - label: "Pages"
