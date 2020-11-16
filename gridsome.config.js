@@ -53,6 +53,13 @@ module.exports = {
         path: 'content/pages/home.yml',
         typeName: 'HomeContent',
       }
+    },
+    { use: 'gridsome-plugin-netlify-cms' },
+    {
+      use: 'gridsome-plugin-netlify-cms-paths',
+      options: {
+        contentTypes: ['HomeContent'] // Same as declared above
+      }
     }
   ]
 }

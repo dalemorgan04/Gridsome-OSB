@@ -175,9 +175,8 @@ export default {
     summary() { return "summary" }, // this.$page.homeContent.edges[0].node.summary},
     landingImage(){ 
       var image = this.$page.home.edges[0].node.landingSection.landingImages[0].landingImage;
-      // return require.resolve("../assets/uploads/" + image);
+      //return require.resolve("../assets/uploads/" + image);
       return "";
-      // return require(`!!assets-loader!@uploads/${image}`);
       },
     heroImages() { 
       var images = [];
