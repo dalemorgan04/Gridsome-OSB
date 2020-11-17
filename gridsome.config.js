@@ -52,6 +52,17 @@ module.exports = {
       options: {
         path: 'content/pages/home.yml',
         typeName: 'HomeContent',
+        coverField: 'landingImage'
+      }
+    },
+    { use: 'gridsome-plugin-netlify-cms',
+      options: { publicPath: `/admin`}
+    },
+    {
+      use: 'gridsome-plugin-netlify-cms-paths',
+      options: {
+        contentTypes: ['HomeContent'],
+        coverField: 'landingImage'
       }
     }
   ]
