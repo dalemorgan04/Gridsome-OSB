@@ -56,8 +56,7 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'content/pages/home.yml',
-        typeName: 'HomeContent',
-        coverField: 'landingImage'
+        typeName: 'HomeContent'
       }
     },
     { use: 'gridsome-plugin-netlify-cms',
@@ -67,7 +66,7 @@ module.exports = {
       use: 'gridsome-plugin-netlify-cms-paths',
       options: {
         contentTypes: ['HomeContent'],
-        coverField: 'landingImage'
+        coverField: 'image'
       }
     }
   ],

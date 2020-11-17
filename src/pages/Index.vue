@@ -4,7 +4,7 @@
       <section class="jumbotron-container">
         <div class="container-image">
           <g-image v-if="!useHeroCarousel"
-            :src="this.$page.home.edges[0].node.landingSection.landingImages[0].landingImage" class="card-img-top" />
+            :src="homeContent.landing.carousel[0].image" class="card-img-top" />
           <b-carousel 
             v-if="useHeroCarousel"
             style="text-shadow: 0px 0px 2px #000"
@@ -52,7 +52,6 @@
 
       <div class="section-title accent">
         <h1>Feature Projects</h1>
-        {{this.$page.home.edges[0].node.landingSection.landingImages[0].landingImage}}
       </div>
       <section class="projects-container">
         <!-- <projectcards
@@ -108,38 +107,38 @@ query {
   home: allHomeContent {
     edges {
       node {
-        landingSection {
-          landingTitle
-          landingSubtext
-          landingImages {
-            landingImage
+        landing {
+          title
+          text
+          carousel {
+            image
           }
         }
-        summarySection {
-          summaryTitle
-          summaryText
-          summaryImage
+        summary {
+          title
+          text
+          image
         }
-        featureProjects {
-          featureImage1 {
-            featureTitle1
-            featureText1
-            featureImage1
+        projects {
+          project1 {
+            title
+            text
+            image
           }
-          featureImage2 {
-            featureTitle2
-            featureText2
-            featureImage2
+          project2 {
+            title
+            text
+            image
           }
-          featureImage3 {
-            featureTitle3
-            featureText3
-            featureImage3
+          project3 {
+            title
+            text
+            image
           }
-          featureImage4 {
-            featureTitle4
-            featureText4
-            featureImage4
+          project4 {
+            title
+            text
+            image
           }
         }
       }
@@ -171,6 +170,7 @@ export default {
     }
   },
   computed: {
+    homeContent() { return this.$page.home.edges[0].node },
     intro() { return "test" },//this.$page.homeContent.edges[0].node.intro},
     summary() { return "summary" }, // this.$page.homeContent.edges[0].node.summary},
     landingImage(){ 
