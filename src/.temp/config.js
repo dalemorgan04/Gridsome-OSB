@@ -3,6 +3,6 @@ export default {
   "pathPrefix": "",
   "titleTemplate": "%s - Gridsome",
   "siteUrl": "",
-  "version": "0.7.13",
+  "version": "0.7.22",
   "catchLinks": true
 }
