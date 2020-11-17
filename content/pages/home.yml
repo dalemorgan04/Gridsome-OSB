@@ -12,18 +12,18 @@ summary:
     architectural Design services to suit your requirements. Our designs are
     both practical and delightful. OSB architects believe it really is the
     little things that matter. With a keen attention to detail
-  image: skylight.jpg
+  image: /uploads/skylight.jpg
 projects:
   project1:
-    image: /uploads/images/conservatory.jpg
+    image: /uploads/conservatory.jpg
     title: Small extension with a big impact
     text: A sensitive design approach in the Mapperley Park Conservation area
   project2:
-    image: /uploads/images/kitchen.jpg
+    image: /uploads/kitchen.jpg
     title: Creating a light filled space
     text: Enhancing natural daylight to create a happy environment
   project3:
-    image: /uploads/images/rear_garden.jpg
+    image: /uploads/rear_garden.jpg
     text: Amazing contemporary transformation of this semi detached 1930s
       property in Wollaton ona tight budget
     title: Small extension with a big impact

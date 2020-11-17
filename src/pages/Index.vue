@@ -3,28 +3,26 @@
     <div>
       <section class="jumbotron-container">
         <div class="container-image">
-          <g-image v-if="!useHeroCarousel"
+          <g-image v-if="!useCarousel"
             :src="homeContent.landing.carousel[0].image" class="card-img-top" />
           <b-carousel 
-            v-if="useHeroCarousel"
+            v-if="useCarousel"
             style="text-shadow: 0px 0px 2px #000"
             fade           
           >
-            <!-- <b-carousel-slide
-              v-for="image in heroImages" 
-              :key="image.index"
-              :img-src="image.src"
-            ></b-carousel-slide> -->
+            <b-carousel-slide
+              v-for="i in homeContent.landing.carousel" 
+              :key="i.index"
+              :img-src="i.image"
+            ></b-carousel-slide>
           </b-carousel>
         </div>
         <div class="container-text">
           <div class="inner-container-text">
             <h1 class="jumbotron-heading accent">
-              Inspiring Architectural Design Solutions for your home
+              {{this.homeContent.summary.title}}
             </h1>
-            <p>
-              {{intro}}
-            </p>
+            <p>{{this.homeContent.summary.text}}</p>
             <div class="container-slogan">
               <span class="text">helping you create your </span>
               <span class="highlight">happpy.</span>
@@ -36,16 +34,12 @@
 
       <section class="summary-container">
         <div class="summary-image" >
-          <!-- <g-image :src="houseImage" fit="contain"/> -->
+          <g-image :src="homeContent.summary.image" fit="contain"/>
         </div>
         <div class="summary-content">
-          <h1>Inspiring Architectural Design Solutions that Focus on your Wellbeing</h1>
+          <h1>{{this.homeContent.summary.title}}</h1>
           <p class="accent-bottom">
-            OSB Architects offers proffesional, reliable and friendly architectural Design
-            services to suit your requirements. Our designs are both practical and delightful.
-            <br/>
-            OSB architects believe it really is the little things that matter. With a keen
-            attention to detail
+            {{this.homeContent.summary.text}}
           </p>
         </div>
       </section>
@@ -61,7 +55,7 @@
         ></projectcards> -->
         <projectcards
           v-for="project in this.projects"
-          :key="project.id"
+          :key="project.index"
           :project="project"
         ></projectcards>
       </section>
@@ -159,25 +153,19 @@ export default {
     quote: QuoteSvg
   },
   data: function() {
-    return {
-      useHeroCarousel: false,
-      projects: [
-        { id: 1, image:'kitchen.jpg', title: 'Small extension with a big impact', description: 'A sensitive design approach in the Mapperley Park Conservation area'},
-        { id: 2, image:'lounge.jpg', title: 'Socialable space', description: 'A complete reconfiguration of this family home in Long Eaton to create a social open plan living space with improved connections to the garden'},
-        { id: 3, image:'rear_garden.jpg', title: 'Contemporary transformation', description: 'Amazing contemporary transformation of this semi detached 1930s property in Wollaton ona tight budget'},
-        { id: 4, image:'sliding_door.jpg', title: 'Creating a light filled space', description: 'Enhancing natural daylight to create a happy environment'}
-      ]      
-    }
+    return {}
   },
   computed: {
     homeContent() { return this.$page.home.edges[0].node },
-    intro() { return "test" },//this.$page.homeContent.edges[0].node.intro},
-    summary() { return "summary" }, // this.$page.homeContent.edges[0].node.summary},
-    landingImage(){ 
-      var image = this.$page.home.edges[0].node.landingSection.landingImages[0].landingImage;
-      //return require.resolve("~/" + image);
-      return "";
-      },
+    useCarousel() { return this.homeContent.landing.carousel.length > 1 },
+    projects() { 
+      var projects = [];
+      projects.push( this.homeContent.projects.project1);
+      projects.push( this.homeContent.projects.project2);
+      projects.push( this.homeContent.projects.project3);
+      projects.push( this.homeContent.projects.project4);
+      return projects;
+    },    
     heroImages() { 
       var images = [];
       // images.push(require(`!!assets-loader!@uploads/front.jpg`));

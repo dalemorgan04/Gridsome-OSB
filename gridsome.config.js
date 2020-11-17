@@ -5,9 +5,12 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const path = require('path');
+
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const fromPath = path.resolve(__dirname,"static/uploads/");
 const toPath = path.resolve(__dirname,"src/uploads/");
+
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   siteName: 'Gridsome',
@@ -28,7 +31,7 @@ module.exports = {
     svgRule
       .use('vue-svg-loader')
       .loader('vue-svg-loader')
-    config.resolve.alias.set('@uploads', 'static/uploads/images')
+    config.resolve.alias.set('@uploads', 'static/uploads')
     config.mode('production')   
   },
   plugins: [
@@ -78,7 +81,8 @@ module.exports = {
           to: toPath,
           toType: "dir"
         }
-      ])
+      ]),
+      new BundleAnalyzerPlugin()
     ]
   }
 }
