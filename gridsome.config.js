@@ -4,6 +4,11 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const fromPath = path.resolve(__dirname,"static/uploads/");
+const toPath = path.resolve(__dirname,"src/uploads/");
+
 module.exports = {
   siteName: 'Gridsome',
   port: '44301',
@@ -24,7 +29,7 @@ module.exports = {
       .use('vue-svg-loader')
       .loader('vue-svg-loader')
     config.resolve.alias.set('@uploads', 'static/uploads/images')
-    config.mode('production')
+    config.mode('production')   
   },
   plugins: [
     {
@@ -65,5 +70,16 @@ module.exports = {
         coverField: 'landingImage'
       }
     }
-  ]
+  ],
+  configureWebpack: {
+    plugins: [
+      new CopyWebpackPlugin([
+        {          
+          from: fromPath,
+          to: toPath,
+          toType: "dir"
+        }
+      ])
+    ]
+  }
 }
