@@ -81,8 +81,8 @@ module.exports = {
           to: toPath,
           toType: "dir"
         }
-      ]),
-      new BundleAnalyzerPlugin()
+      ])
+      //, new BundleAnalyzerPlugin()
     ]
   }
 }
