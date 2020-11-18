@@ -55,7 +55,7 @@
         ></projectcards> -->
         <projectcards
           v-for="project in this.projects"
-          :key="project.index"
+          :key="project.id"
           :project="project"
         ></projectcards>
       </section>
@@ -152,19 +152,26 @@ export default {
     testimonials: Testimonial,
     quote: QuoteSvg
   },
-  data: function() {
-    return {}
-  },
+  // data: function() {
+  //   return {
+  //     projects: [
+  //       { id: 1, image:'kitchen.jpg', title: 'Small extension with a big impact', description: 'A sensitive design approach in the Mapperley Park Conservation area'},
+  //       { id: 2, image:'lounge.jpg', title: 'Socialable space', description: 'A complete reconfiguration of this family home in Long Eaton to create a social open plan living space with improved connections to the garden'},
+  //       { id: 3, image:'rear_garden.jpg', title: 'Contemporary transformation', description: 'Amazing contemporary transformation of this semi detached 1930s property in Wollaton ona tight budget'},
+  //       { id: 4, image:'sliding_door.jpg', title: 'Creating a light filled space', description: 'Enhancing natural daylight to create a happy environment'}
+  //     ]      
+  //   }
+  // },
   computed: {
     homeContent() { return this.$page.home.edges[0].node },
-    useCarousel() { return this.homeContent.landing.carousel.length > 1 },
+    useCarousel() { return this.homeContent.landing.carousel.length > 1 },    
     projects() { 
       var projects = [];
-      projects.push( this.homeContent.projects.project1);
-      projects.push( this.homeContent.projects.project2);
-      projects.push( this.homeContent.projects.project3);
-      projects.push( this.homeContent.projects.project4);
-      return projects;
+      projects.push( this.toProject( 1, this.homeContent.projects.project1 ));
+      projects.push( this.toProject( 2, this.homeContent.projects.project2 ));
+      projects.push( this.toProject( 3, this.homeContent.projects.project3 ));
+      projects.push( this.toProject( 4, this.homeContent.projects.project4 ));
+      return projects;      
     },    
     heroImages() { 
       var images = [];
@@ -175,7 +182,16 @@ export default {
       return images;
     }
   },
-  methods: {}
+  methods: {
+    toProject(id, project) {
+      return {
+        id: id,
+        title: project.title,
+        text: project.text,
+        image: project.image
+      }
+    }
+  }
 }
 </script>
 

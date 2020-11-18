@@ -1,6 +1,6 @@
 <template>
   <div class="card-project">
-    <g-image :src="image" class="card-img-top" />
+    <g-image :src="project.image" class="card-img-top" />
     <div class="card-body">
       <h5 class="card-title h2">{{ project.title }}</h5>
       <p class="card-text p">{{ project.text }}</p>
@@ -19,11 +19,12 @@ export default {
   },
   computed: {
     image() {
-      return path.resolve(__dirname,"static/uploads/",this.project.image);
-      // return require(this.project.image);
+      //return path.resolve(__dirname,"static/uploads/",this.project.image);
+      return require(`!!assets-loader!~${this.project.image}`);
+      // return "";
     },
     imageAlt() { return this.project.title; },
-    class() { return 'card-project ' + this.project.class; }
+    class() { return 'card-project ' } // + this.project.class; }
   }
 }
 </script>

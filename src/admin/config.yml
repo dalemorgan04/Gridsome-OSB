@@ -59,7 +59,7 @@ collections:
                   - {label: "Title", name: "title", widget: "string"}
                   - {label: "Description", name: "text", widget: "string"}
               - label: "Project 4"
-                name: "featureProject4"
+                name: "project4"
                 widget: "object"
                 fields:
                   - {label: "Image", name: "image", widget: "image"}

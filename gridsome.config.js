@@ -31,7 +31,7 @@ module.exports = {
     svgRule
       .use('vue-svg-loader')
       .loader('vue-svg-loader')
-    config.resolve.alias.set('@uploads', 'static/uploads')
+    config.resolve.alias.set('@uploads', '/uploads')
     config.mode('production')   
   },
   plugins: [
