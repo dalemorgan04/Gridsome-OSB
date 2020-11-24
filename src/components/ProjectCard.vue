@@ -58,11 +58,11 @@ export default {
       right: 0;
       bottom: 0;
       background: $light;
-      opacity: 50%;
+      opacity: 60%;
     }
 
     .card-title, .card-text {
-      position: relative
+      position: relative;
     }
 
     .card-title {
