@@ -44,16 +44,32 @@ export default {
   }
 
   .card-body {
-    position: static;
+    position: relative;
     margin-right: 10px;
     bottom: 0;
-    left: 40%;
-    background: $light;
+    
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+
+    &:before{
+      content:" ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $light;
+      opacity: 50%;
+    }
+
+    .card-title, .card-text {
+      position: relative
+    }
 
     .card-title {
       font-family: $font-header;
       font-size: 24px;
     }
+
     a {
       position: absolute;
       top: 20px;
@@ -62,12 +78,17 @@ export default {
   }
 }
 @media(min-width: $desktopL){
+
+}
+
+@media(min-width: $desktopL){
   .card-project {
     padding-bottom: 100px;
 
      .card-body {
       position: absolute;
       margin-bottom: 10px;
+      left: 40%;
 
       .card-title{
         margin-right: 40px;

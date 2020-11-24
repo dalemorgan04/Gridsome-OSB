@@ -44,15 +44,14 @@
         </div>
       </section>
 
-      <div class="section-title accent">
-        <h1>Feature Projects</h1>
+      <div class="section-title projects-title">
+        <h1>
+          <span class="projects-vertical">Feature </span>
+          <span>Projects</span>
+        </h1>
       </div>
       <section class="projects-container">
-        <!-- <projectcards
-          v-for="edge in $page.projectCards.edges"
-          :key="edge.node.id"
-          :project="edge.node"
-        ></projectcards> -->
+        <h1 class="projects-vertical">Feature</h1>
         <projectcards
           v-for="project in this.projects"
           :key="project.id"
@@ -307,7 +306,9 @@ export default {
   }
 }
 
-.projects-container{}
+.projects-title .projects-vertical{
+  display: none;
+}
 
 .testimonials-container {    
   margin: 40px 20px 40px 30px;
@@ -419,13 +420,11 @@ export default {
     .summary-content {
       flex: 0 0 40%;
       max-width: 700px;
-      
-
-
     }
-  }
+  } 
 
   .projects-container{
+    position: relative;
     width: 100%;
     padding: 0 20px;
     display: grid;
@@ -436,26 +435,32 @@ export default {
           width: 100%;
         }
       }
-      .card-project:nth-child(1){
+       .projects-vertical{
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        display: none;
+      }
+      .card-project:nth-child(2){
         grid-column: 2 / span 1;
         grid-row: 1 / span 2;
         text-align: right;
       }
-      .card-project:nth-child(2){
+      .card-project:nth-child(3){
         grid-column: 3 / span 1;
         grid-row: 2 / span 2;
       }
-      .card-project:nth-child(3){
+      .card-project:nth-child(4){
         grid-column: 1 / span 2;
         grid-row: 3 / span 2;
         text-align: right;
       }
-      .card-project:nth-child(4){
+      .card-project:nth-child(5){
         grid-column: 3 / span 2;
         grid-row: 4 / span 2;
       }
   }
 }
+
 
 @media (min-width: $desktop) {
 
@@ -488,8 +493,30 @@ export default {
     }
   }
 
+ .projects-title {
+    margin-left: 5%;
+
+    h1 {
+      margin-left: 100px;
+      font-size: 80px;
+    }
+
+    .projects-vertical{
+      display: block;
+    }
+  }
+
   .projects-container{
     margin-bottom: 160px;
+
+    .projects-vertical{
+      transform: rotate(270deg);
+      position: absolute;
+      transform-origin: right bottom 0;
+      float: left;
+      right: 0;
+      font-size: 80px;
+    }
   }
 
   .testimonials-container {    

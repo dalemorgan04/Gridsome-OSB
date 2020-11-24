@@ -2,9 +2,7 @@
   <nav>
     <ul class="d-flex flex-row justify-content-center align-items-center">
       <li class="selected"><g-link to="/">Home</g-link></li>
-      <li><g-link to="/project">Projects</g-link></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><g-link to="/contact">Contact</g-link></li>
     </ul>
   </nav>
 </template>
