@@ -46,7 +46,7 @@
 
       <div class="section-title projects-title">
         <h1>
-          <span class="projects-vertical">Feature </span>
+          <span class="projects-vertical">Feature&nbsp;</span>
           <span>Projects</span>
         </h1>
       </div>
@@ -87,8 +87,7 @@
           Please get in touch for further information or to arrange a free, no obligation
           initial meeting.
         </p>
-        <button class="btn btn-primary shadow">CONTACT</button>
-        <!-- <g-link class="btn btn-primary">CONTACT</g-link>  -->
+        <g-link to="/contact/" class="btn btn-primary shadow">CONTACT</g-link> 
       </section>
 
     </div>
@@ -151,16 +150,6 @@ export default {
     testimonials: Testimonial,
     quote: QuoteSvg
   },
-  // data: function() {
-  //   return {
-  //     projects: [
-  //       { id: 1, image:'kitchen.jpg', title: 'Small extension with a big impact', description: 'A sensitive design approach in the Mapperley Park Conservation area'},
-  //       { id: 2, image:'lounge.jpg', title: 'Socialable space', description: 'A complete reconfiguration of this family home in Long Eaton to create a social open plan living space with improved connections to the garden'},
-  //       { id: 3, image:'rear_garden.jpg', title: 'Contemporary transformation', description: 'Amazing contemporary transformation of this semi detached 1930s property in Wollaton ona tight budget'},
-  //       { id: 4, image:'sliding_door.jpg', title: 'Creating a light filled space', description: 'Enhancing natural daylight to create a happy environment'}
-  //     ]      
-  //   }
-  // },
   computed: {
     homeContent() { return this.$page.home.edges[0].node },
     useCarousel() { return this.homeContent.landing.carousel.length > 1 },    
@@ -171,14 +160,6 @@ export default {
       projects.push( this.toProject( 3, this.homeContent.projects.project3 ));
       projects.push( this.toProject( 4, this.homeContent.projects.project4 ));
       return projects;      
-    },    
-    heroImages() { 
-      var images = [];
-      // images.push(require(`!!assets-loader!@uploads/front.jpg`));
-      // this.$page.homeContent.edges[0].node.heroImages.forEach( i => {
-      //   images.push(require(`!!assets-loader!@uploads/${i.image}`));
-      // });
-      return images;
     }
   },
   methods: {
@@ -306,7 +287,7 @@ export default {
   }
 }
 
-.projects-title .projects-vertical{
+.projects-container .projects-vertical {
   display: none;
 }
 
@@ -438,7 +419,6 @@ export default {
        .projects-vertical{
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
-        display: none;
       }
       .card-project:nth-child(2){
         grid-column: 2 / span 1;
@@ -493,30 +473,8 @@ export default {
     }
   }
 
- .projects-title {
-    margin-left: 5%;
-
-    h1 {
-      margin-left: 100px;
-      font-size: 80px;
-    }
-
-    .projects-vertical{
-      display: block;
-    }
-  }
-
   .projects-container{
     margin-bottom: 160px;
-
-    .projects-vertical{
-      transform: rotate(270deg);
-      position: absolute;
-      transform-origin: right bottom 0;
-      float: left;
-      right: 0;
-      font-size: 80px;
-    }
   }
 
   .testimonials-container {    
@@ -551,4 +509,33 @@ export default {
     }
   }
 }
+
+@media (min-width: $desktopL) {
+
+  .projects-title{
+    margin-left: 5%;
+
+    h1 {
+      margin-left: 100px;
+      font-size: 80px;
+    }
+
+    .projects-vertical{
+      display: none;  
+    }
+  } 
+
+  .projects-container{
+    .projects-vertical{
+      transform: rotate(270deg);
+      position: absolute;
+      transform-origin: right bottom 0;
+      float: left;
+      right: 0;
+      font-size: 80px;
+      display: block;
+    }
+  }
+}
+
 </style>
