@@ -1,17 +1,18 @@
 landing:
   carousel:
-    - image: /uploads/red-roof.jpg
+    - image: /uploads/front.jpg
+    - image: /uploads/skylight.jpg
   title: Inspiring Architectural Design Solutions for your home
-  text: OSB Architects offers proffesional, reliable and friendly
-    architectural Design services to suit your requirements. Our designs are
-    both practical and delightful. OSB architects believe it really is the
-    little things that matter. With a keen attention to detail
+  text: OSB Architects offers proffesional, reliable and friendly architectural
+    Design services to suit your requirements. Our designs are both practical
+    and delightful. OSB architects believe it really is the little things that
+    matter. With a keen attention to detail
 summary:
   title: Inspiring Architectural Design Solutions that Focus on your Wellbeing
-  text: OSB Architects offers proffesional, reliable and friendly
-    architectural Design services to suit your requirements. Our designs are
-    both practical and delightful. OSB architects believe it really is the
-    little things that matter. With a keen attention to detail
+  text: OSB Architects offers proffesional, reliable and friendly architectural
+    Design services to suit your requirements. Our designs are both practical
+    and delightful. OSB architects believe it really is the little things that
+    matter. With a keen attention to detail
   image: /uploads/skylight.jpg
 projects:
   project1:
@@ -25,10 +26,10 @@ projects:
   project3:
     image: /uploads/rear_garden.jpg
     title: Small extension with a big impact
-    text: Amazing contemporary transformation of this semi detached 1930s
-      property in Wollaton ona tight budget
+    text: Amazing contemporary transformation of this semi detached 1930s property
+      in Wollaton ona tight budget
   project4:
     image: /uploads/sketch.jpg
     title: Small extension with a big impact
-    text: Amazing contemporary transformation of this semi detached 1930s
-      property in Wollaton ona tight budget
+    text: Amazing contemporary transformation of this semi detached 1930s property
+      in Wollaton ona tight budget
