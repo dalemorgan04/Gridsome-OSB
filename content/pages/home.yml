@@ -3,12 +3,14 @@ landing:
     - image: /uploads/front.jpg
     - image: /uploads/rear_garden.jpg
     - image: /uploads/skylight.jpg
-    - image: /uploads/interior-img_3151close-up.jpg
     - image: /uploads/conservatory.jpg
     - image: /uploads/kitchen-edited.jpg
     - image: /uploads/p1000700-edited.jpg
     - image: /uploads/sliding_door.jpg
     - image: /uploads/img_0057-edited.jpg
+    - image: /uploads/rear-garden-edited-02.jpg
+    - image: /uploads/exterior-img_3165.jpg
+    - image: /uploads/interior-img_3179.jpg
   title: Inspiring Architectural Design Solutions for your homeInspiring
     Architectural  Design Solutions for  your home that focus  on your wellbeing
   text: "OSB ARCHITECTS offers professional architectural design services
@@ -35,20 +37,23 @@ summary:
   image: /uploads/interior-img_3151close-up.jpg
 projects:
   project1:
-    image: /uploads/conservatory.jpg
-    title: Small extension with a big impact
-    text: A sensitive design approach in the Mapperley Park Conservation area
+    image: /uploads/skylight.jpg
+    title: Small extension with a BIG impact
+    text: A dramatic yet sensitive design approach to create a stunning kitchen at
+      the heart of this home in the Mapperley Park Conservation Area
   project2:
-    image: /uploads/kitchen.jpg
-    title: Creating a light filled space
-    text: Enhancing natural daylight to create a happy environment
+    image: /uploads/p1000700-edited.jpg
+    title: Sociable space
+    text: A complete reconfiguration of this family home in Long Eaton to create a
+      sociable open plan family living space with improved connections to the
+      garden
   project3:
     image: /uploads/rear_garden.jpg
-    title: Small extension with a big impact
+    title: Contemporary transformation
     text: Amazing contemporary transformation of this semi detached 1930s property
-      in Wollaton ona tight budget
+      in Wollaton on a tight budget
   project4:
-    image: /uploads/sketch.jpg
-    title: Small extension with a big impact
-    text: Amazing contemporary transformation of this semi detached 1930s property
-      in Wollaton ona tight budget
+    image: /uploads/conservatory.jpg
+    title: Creating a light filled space
+    text: Enhancing natural daylight to create a happy and relaxing living space at
+      the rear of this Long Eaton property
