@@ -58,7 +58,7 @@ export default {
       right: 0;
       bottom: 0;
       background: $light;
-      opacity: 60%;
+      opacity: 80%;
     }
 
     .card-title, .card-text {

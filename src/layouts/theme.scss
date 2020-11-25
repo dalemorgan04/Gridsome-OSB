@@ -1,12 +1,11 @@
 //Fonts
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @font-face {
     font-family: 'MONDAY';
     src: url('../assets/fonts/MONDAY.ttf');
-}
-@font-face {
-    font-family: 'Architects Daughter';
-    src: url('../assets/fonts/ArchitectsDaughter.ttf');
 }
 
 //Screen widths
@@ -23,17 +22,17 @@ $desktopL: 1430px;
 //Theme
 $primary: #ffda00;
 $secondary: #4ABDAC;
-$warning: #ffda00;
+$warning: #3B3B3B;
 $danger: #E4572E;
 $success: #17BEBB;
-$black: #1A2930;
+$black: #3B3B3B;
 $grey: #707070;
 $info: #3F88C5;
 $dark: #2E282A;
 $light: white;
-$font-header: 'Playfair Display', serif;
+$font-header: 'Spartan', Helvetica, sans-serif;
 $font-slogan: 'Architects Daughter';
-$font-happy: 'MONDAY';
+$font-happy: 'Architects Daughter';
 
 $shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 $enable-rounded: false;
@@ -69,6 +68,7 @@ h4, .h4 {
 p, .p {
     font-size: 16px;
     color: $black; 
+    font-family: 'Roboto';
 }
 
 .shadow {

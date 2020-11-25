@@ -21,9 +21,9 @@
         <div class="container-text">
           <div class="inner-container-text">
             <h1 class="jumbotron-heading accent">
-              {{this.homeContent.summary.title}}
+              {{this.homeContent.landing.title}}
             </h1>
-            <p>{{this.homeContent.summary.text}}</p>
+            <p>{{this.homeContent.landing.text}}</p>
             <div class="container-slogan">
               <span class="text">helping you create your </span>
               <span class="highlight">happpy.</span>
