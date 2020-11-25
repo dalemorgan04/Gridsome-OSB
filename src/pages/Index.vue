@@ -8,7 +8,8 @@
           <b-carousel 
             v-if="useCarousel"
             style="text-shadow: 0px 0px 2px #000"
-            fade           
+            fade
+            controls                    
           >
             <b-carousel-slide
               v-for="i in homeContent.landing.carousel" 
@@ -194,18 +195,24 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-height: 75vh;
 
     img {
       box-shadow: $shadow;
     }
-    .carousel-inner {
-      height: 20vh;
-      overflow: hidden;
 
-        .carousel {
+    .carousel {
+      overflow: hidden;      
+
+        .carousel-inner {
           width: auto;
           box-shadow: $shadow;
           margin-bottom: 20px;
+
+          img {
+            height: 100%;
+            width: auto;
+          }
       }
     }
   }

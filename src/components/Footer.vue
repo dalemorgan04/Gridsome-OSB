@@ -7,24 +7,13 @@
         <div class="copyright">
           Copyright OSB Architects Ltd <br>
           28 Ewell Road Wollaton Nottingham Ng8 2DE
-        </div>
-        <div class="riba">
-          <g-image :src="image" fit="contain"/>
-        </div>
+        </div>        
       </div>
 
       <div class="container-right">
-          <div class="logo">
-            <LogoSvg />
-          </div>
-          <small>
-            helping you create your <span>Happy.</span>
-          </small>
-          <div class="contact">
-            <a href='#' class="btn btn-primary">
-              CONTACT
-            </a>
-          </div>
+        <div class="riba">
+          <g-image :src="image" fit="contain"/>
+        </div>
       </div>
 
     </div>
@@ -71,39 +60,11 @@
       .container-left{
         flex: 1 1 50%;
         flex-direction: column;
-
-
-        .copyright {
-          margin: 20px 0;
-          text-align: center;
-          color: $grey;
-          font-size: 18px;
-        }
-
-        .riba{
-            text-align: center;
-          img {
-            height: 70px;
-            width: auto;
-          }
-        }
-      }
+      }     
 
       .container-right{
         display: none;
 
-        .logo {
-          width: 100%;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-
-          svg {
-            height: 70px;
-            width: auto;
-          }
-        }
-        
         small{
           text-align: center;
           font-size: 30px;
@@ -129,7 +90,35 @@
         font-size: 20px;
         padding-top: 20px;
     }
+
+    .copyright {
+      margin: 20px 0;
+      text-align: center;
+      color: $grey;
+      font-size: 18px;
+    }
+
+    .riba{
+        text-align: center;
+      img {
+        height: 70px;
+        width: auto;
+      }
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        svg {
+          height: 70px;
+          width: auto;
+        }
+      }
   }
+  
   @media (min-width: $tablet){
     footer {
       .container-info{
