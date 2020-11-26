@@ -328,6 +328,7 @@ export default {
     .quote {
       p{
         padding: 20px 40px 0 40px;
+        font-family: $font-quote;
       }
     }
     .lquote {
@@ -362,11 +363,6 @@ export default {
       white-space: nowrap;
     }
   }
-
-  .text {
-    font-family: $font-quote;
-  }
-
 }
 
 
