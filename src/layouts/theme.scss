@@ -7,7 +7,14 @@
     font-family: 'MONDAY';
     src: url('../assets/fonts/MONDAY.ttf');
 }
-
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('../assets/fonts/CenturyGothic.ttf');
+}
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../assets/fonts/HelveticaNeue.ttf');
+}
 //Screen widths
 $mobile:   576px;
 $tablet:   768px;
@@ -30,9 +37,9 @@ $grey: #707070;
 $info: #3F88C5;
 $dark: #2E282A;
 $light: white;
-$font-header: 'Spartan', Helvetica, sans-serif;
-$font-slogan: 'Architects Daughter';
-$font-happy: 'Architects Daughter';
+$font-header: 'Helvetica Neue', Helvetica, sans-serif;
+$font-slogan: 'Century Gothic';
+$font-happy: 'Century Gothic';
 
 $shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 $enable-rounded: false;
@@ -68,7 +75,7 @@ h4, .h4 {
 p, .p {
     font-size: 16px;
     color: $black; 
-    font-family: 'Roboto';
+    font-family: 'Century Gothic';
 }
 
 .shadow {

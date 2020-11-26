@@ -25,9 +25,9 @@
             </h1>
             <p>{{this.homeContent.landing.text}}</p>
             <div class="container-slogan">
-              <span class="text">helping you create your </span>
-              <span class="highlight">happpy.</span>
-              <span class="text"> home</span>
+              <span class="p">helping you create your </span>
+              <span class="p highlight">happy.</span>
+              <span class="p"> home</span>
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@
           Please get in touch for further information or to arrange a free, no obligation
           initial meeting.
         </p>
-        <g-link to="/contact/" class="btn btn-primary shadow">CONTACT</g-link> 
+        <g-link to="/contact/" class="btn shadow">CONTACT</g-link> 
       </section>
 
     </div>
@@ -232,7 +232,7 @@ export default {
         padding-right: 30px;
       }
       p {
-        text-align: right;
+        text-align: left;
         padding: 0 10px;
       }
       .container-slogan {
@@ -279,7 +279,8 @@ export default {
     padding: 40px 40px 0 40px;
 
     h1 {
-      text-align: left;      
+      padding-right: 20px;
+      text-align: right;      
     }
     p {
       padding: 0 20px 20px 0;
@@ -352,7 +353,6 @@ export default {
     
     .highlight{
       color: $primary;
-      font-size: 45px;
       font-family: $font-happy;
       white-space: nowrap;
     }
@@ -374,9 +374,6 @@ export default {
       flex: 0 0 40%;
 
       .inner-container-text {
-        p {
-          text-align: right;
-        }
         .container-slogan {
           .text {
             font-family: $font-slogan;
