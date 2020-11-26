@@ -13,7 +13,7 @@ const toPath = path.resolve(__dirname,"src/uploads/");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'OSB',
   port: '44301',
   transformers: {
     remark: {

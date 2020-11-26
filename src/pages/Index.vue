@@ -146,6 +146,10 @@ import Testimonial from '../components/Testimonial.vue'
 import QuoteSvg from '../assets/images/quote.svg'
 
 export default {  
+  name: 'Home',
+  metaInfo: {
+    title: 'Home'  
+  },
   components: {
     projectcards: ProjectCard,
     testimonials: Testimonial,
@@ -206,12 +210,12 @@ export default {
 
         .carousel-inner {
           width: auto;
-          box-shadow: $shadow;
           margin-bottom: 20px;
 
           img {
             height: 100%;
             width: auto;
+            box-shadow: $shadow;
           }
       }
     }
@@ -237,14 +241,15 @@ export default {
       }
       .container-slogan {
         text-align: center;
+        font-size: 14px;
+        font-family: $font-slogan;
+
         .text {
           font-family: $font-slogan;
-          font-size: 14px;
           color: $grey;
         }
         .highlight {
           font-family: $font-happy;
-          font-size: 26px;
           color: $primary;
         }
       }
@@ -358,6 +363,10 @@ export default {
     }
   }
 
+  .text {
+    font-family: $font-quote;
+  }
+
 }
 
 
@@ -375,14 +384,15 @@ export default {
 
       .inner-container-text {
         .container-slogan {
+          font-family: $font-slogan;
+          font-size: 16px;
+
           .text {
             font-family: $font-slogan;
-            font-size: 16px;
             color: $grey;
           }
           .highlight {
             font-family: $font-happy;
-            font-size: 26px;
             color: $primary;
           }
         }
@@ -458,12 +468,9 @@ export default {
 
       .inner-container-text {
         .container-slogan {
-          .text {
+          .text, .highlight {
             font-size: 20px;
-          }
-          .highlight {
-            font-size: 35px;
-          }
+          }          
         }
       }
     }
@@ -507,7 +514,6 @@ export default {
 
       .highlight{
         color: $primary;
-        font-size: 60px;
         font-family: $font-happy;
       }
     }

@@ -5,8 +5,14 @@
       
       <div class="container-left">
         <div class="copyright">
-          Copyright OSB Architects Ltd <br>
-          28 Ewell Road Wollaton Nottingham Ng8 2DE
+          Copyright OSB Architects Ltd 
+          <br>
+          <span>28 Ewell Road,</span>
+          <span>Wollaton,</span>
+          <span>Nottingham NG8 2DE</span>
+          <br>
+          Find us on <a href="https://www.facebook.com/OSBARCHITECTS/">Facebook</a> |
+          <a href="https://www.instagram.com/osbarchitects/">Instagram</a>
         </div>        
       </div>
 
@@ -96,6 +102,14 @@
       text-align: center;
       color: $grey;
       font-size: 18px;
+      span {
+        white-space: nowrap;
+      }
+       a{
+         color: $black;
+         text-decoration: underline;
+         font-weight: bold;
+       }
     }
 
     .riba{

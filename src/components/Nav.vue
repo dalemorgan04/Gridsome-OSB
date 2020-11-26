@@ -1,8 +1,8 @@
 <template>
   <nav>
     <ul class="d-flex flex-row justify-content-center align-items-center">
-      <li class="selected"><g-link to="/">Home</g-link></li>
-      <li><g-link to="/contact">Contact</g-link></li>
+      <li><g-link to="/">HOME</g-link></li>
+      <li><g-link to="/contact">CONTACT</g-link></li>
     </ul>
   </nav>
 </template>
@@ -20,6 +20,7 @@ nav {
     padding: 0;
     text-align: center;
     height: 100%;
+
     li {
       list-style-type: none;
       font-size: 20px;
@@ -29,7 +30,8 @@ nav {
         color: $dark;
 
         &:hover {
-          text-decoration: none;
+          text-decoration: udnerline;
+          color: $primary;
         }
       }
     }
