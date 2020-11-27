@@ -11,6 +11,8 @@
           <span>Wollaton,</span>
           <span>Nottingham NG8 2DE</span>
           <br>
+          Company No. 10571446
+          <br>
           Find us on <a href="https://www.facebook.com/OSBARCHITECTS/">Facebook</a> |
           <a href="https://www.instagram.com/osbarchitects/">Instagram</a>
         </div>        
