@@ -1,10 +1,8 @@
 <template>
   <footer id="sticky-footer" class="py-4 text-white-50">
-    
-    <div class="container-info">
-      
-      <div class="container-left">
-        <div class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm copyright">
           Copyright OSB Architects Ltd 
           <br>
           <span>28 Ewell Road,</span>
@@ -15,22 +13,17 @@
           <br>
           Find us on <a href="https://www.facebook.com/OSBARCHITECTS/">Facebook</a> |
           <a href="https://www.instagram.com/osbarchitects/">Instagram</a>
-        </div>        
-      </div>
-
-      <div class="container-right">
-        <div class="riba">
-          <g-image :src="image" fit="contain"/>
+        </div>
+        <div class="col-sm riba">
+           <g-image :src="image" fit="contain"/>
         </div>
       </div>
-
+      <div class="row">
+        <div class="col-sm developer">
+          <small>Developed by Dale Morgan</small>
+        </div>
+      </div>
     </div>
-
-    <div class="container-developer">
-        <small>Developed by Dale Morgan</small>
-    </div>
-
-
   </footer>
 </template>
 
@@ -61,46 +54,7 @@
     background-color: lightgray;
     color: $grey;
 
-    .container-info{
-      display: flex;
-      flex-direction: column;
-
-      .container-left{
-        flex: 1 1 50%;
-        flex-direction: column;
-      }     
-
-      .container-right{
-        display: none;
-
-        small{
-          text-align: center;
-          font-size: 30px;
-          color: $grey;
-
-          span{
-            font-family: $font-happy;
-            color: $primary;
-            font-size: 40px;
-          }
-        }
-        .contact{
-          text-align: center;
-          color: $primary;
-          font-size: 40px;
-        }
-      }
-    }
-
-    .container-developer {
-        color: $grey;
-        text-align: center;
-        font-size: 20px;
-        padding-top: 20px;
-    }
-
     .copyright {
-      margin: 20px 0;
       text-align: center;
       color: $grey;
       font-size: 18px;
@@ -113,12 +67,22 @@
          font-weight: bold;
        }
     }
-
+    
     .riba{
         text-align: center;
       img {
         height: 70px;
         width: auto;
+      }
+    }
+    
+    .developer {
+      text-align: center;
+
+      small { 
+        text-align: center;
+        font-size: 14px;
+        color: $grey;
       }
     }
 
