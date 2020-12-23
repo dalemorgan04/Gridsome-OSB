@@ -50,8 +50,8 @@ header {
   z-index: 100;
 
   .brand {
-      padding: 0 20px;
-      
+      padding: 0 30px;
+
     svg {
       width: 100%;
       max-height: 75px;
