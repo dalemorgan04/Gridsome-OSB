@@ -205,17 +205,15 @@ export default {
       box-shadow: $shadow;
     }
 
-    .carousel {
-      overflow: hidden;      
-
+    .carousel {      
         .carousel-inner {
           width: auto;
           margin-bottom: 20px;
+          box-shadow: $shadow;
 
           img {
             height: 100%;
             width: auto;
-            box-shadow: $shadow;
           }
       }
     }

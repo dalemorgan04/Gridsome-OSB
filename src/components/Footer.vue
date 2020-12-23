@@ -70,6 +70,8 @@
     
     .riba{
         text-align: center;
+        margin: 10px 0;
+        
       img {
         height: 70px;
         width: auto;
