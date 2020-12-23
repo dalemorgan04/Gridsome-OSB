@@ -9,7 +9,7 @@
 
 <script>
 import AppNav from './Nav.vue'
-import LogoSvg from '../assets/images/logo.svg'
+import LogoSvg from '../assets/images/OsbLogo.svg'
 export default {
   components: {
     'app-nav': AppNav,
@@ -50,6 +50,8 @@ header {
   z-index: 100;
 
   .brand {
+      padding: 0 30px;
+
     svg {
       width: 100%;
       max-height: 75px;
